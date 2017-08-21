@@ -7,5 +7,5 @@ target
 src/main/webapp/META-INF
 .idea
 *.iml
-jdbc.properties
+db.properties
 .git-credentials
