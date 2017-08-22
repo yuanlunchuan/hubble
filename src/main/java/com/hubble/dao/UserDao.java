@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.hubble.entiy.User;
 
-public interface UserDao extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {  
+public interface UserDao extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
 }

@@ -10,6 +10,8 @@
 <h1>编辑用户</h1>
 <form action="${pageContext.request.contextPath}/users/${user.id}/update" method="post">
   用户名：<input name="username" type="text" value="${user.username }"><br>
+  昵称：<input name="nickName" type="text" value="${user.nickName }"><br>
+  年龄：<input name="age" type="text" value="${user.age }"><br>
   密码：<input name="password" type="text" value="${user.password }"><br>
   <button type="submit">提交</button>
 </form>

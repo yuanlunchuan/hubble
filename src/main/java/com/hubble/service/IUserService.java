@@ -3,6 +3,8 @@ package com.hubble.service;
 import java.util.List;
 
 import com.hubble.entiy.User;
+import com.hubble.util.Enquiry;
+import com.hubble.util.PageHelper;
 
 public interface IUserService {
 	User save(User user);
@@ -14,4 +16,6 @@ public interface IUserService {
 	User findByUserId(String userId);
 	
 	List<User> findAll();
+	
+	PageHelper<User> findByEnquiry(Enquiry enquiry);
 }
