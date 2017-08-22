@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.hubble.entiy.User;
 import com.hubble.service.Impl.UserServiceImpl;
 import com.hubble.util.Enquiry;
+import com.hubble.util.PageHelper;
 
 @Controller
 @RequestMapping("/users")
@@ -42,7 +43,17 @@ public class DemoController {
 		model.addAttribute("collection", userService.findByEnquiry(enquiry));
 		return "users/index";
 	}
-	
+
+	//此函数主要用于演示使用sql查询的方法
+	@RequestMapping(value="/getUsersBySql", method=RequestMethod.GET)
+	public String getUsersBySql(String userName,
+			ModelMap model){
+		PageHelper<User> collection = new PageHelper<User>();
+		collection.setContent(userService.getUsersBySql(userName));
+		model.addAttribute("collection", collection);
+		return "users/index";
+	}
+
 	@RequestMapping(value="/new", method=RequestMethod.GET)
 	public String newPage(ModelMap model){
 		return "users/new";

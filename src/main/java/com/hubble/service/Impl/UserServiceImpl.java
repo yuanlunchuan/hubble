@@ -89,4 +89,8 @@ public class UserServiceImpl implements IUserService {
 
 		return result;
 	}
+
+	public List<User> getUsersBySql(String userName) {
+		return userDao.getUsersBySql(userName);
+	}
 }

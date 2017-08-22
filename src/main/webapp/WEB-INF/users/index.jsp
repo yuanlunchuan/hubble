@@ -22,6 +22,10 @@
           年龄:<input name="age" type="text" value="${param.age }">
     <button type="submit">查询</button>
   </form>
+  <form action="<%=baseUrl %>/users/getUsersBySql" method="GET">
+          用户名:<input name="userName" type="text" value="${param.userName }" placeholder="请输入名字">
+    <button type="submit">查询</button>
+  </form>
   <hr>
 
   <table width="400" border="0" cellspacing="0" cellpadding="0">

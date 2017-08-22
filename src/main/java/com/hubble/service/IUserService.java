@@ -18,4 +18,6 @@ public interface IUserService {
 	List<User> findAll();
 	
 	PageHelper<User> findByEnquiry(Enquiry enquiry);
+	
+	List<User> getUsersBySql(String userName);
 }
