@@ -1,0 +1,36 @@
+.content{
+	margin-top: 80px;
+}
+.title{
+	margin-top: 50px;
+}
+.desc{
+	margin-top: 30px;
+}
+.praise-button{
+	margin-top: 30px;
+	border: none;
+	background: #000;
+	color: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.total-container{
+	margin-top: 30px;
+}
+.team-intro{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.team-title{
+	color: rgb(79,116,196);
+	font-size: 25px;
+}
+.line{
+	height: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: rgb(237, 237, 237);
+}
