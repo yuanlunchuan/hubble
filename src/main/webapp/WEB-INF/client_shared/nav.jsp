@@ -20,7 +20,7 @@
         <li><a href="/hubble/aboutUs/show">关于我们</a></li>
         <li><a href="/hubble/sessions/new">登录注册</a></li>
         <li><a href="/hubble/contactUs/new">联系我们</a></li>
-        <li><a href="<%=baseUrl %>/users">进入管理中心</a></li>
+        <li><a href="<%=baseUrl %>/registUser/dashborad">进入用户中心</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
