@@ -53,7 +53,7 @@
 		<div class="line"></div>
 		
 		<div class="text-center">
-		  <h5>没有帐号？<a href="">立即注册</a> </h5>
+		  <h5>没有帐号？<a href="${pageContext.request.contextPath}/register/new">立即注册</a> </h5>
 		</div>
        </div>
      </div>
