@@ -15,7 +15,7 @@
  <div class="container content">
    <div class="row">
      <div class="col-md-3 margin-left-3">
-       <div class="row text-center">
+       <div class="text-center">
          <div class="col-md-5 blue">
            <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
          </div>
@@ -26,7 +26,7 @@
        </div>
      </div>
      <div class="col-md-3 margin-left-3">
-       <div class="row text-center">
+       <div class="text-center">
          <div class="col-md-5 blue">
            <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
          </div>
@@ -37,7 +37,7 @@
        </div>
      </div>
      <div class="col-md-3">
-       <div class="row text-center">
+       <div class="text-center">
          <div class="col-md-5 blue">
            <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
          </div>
@@ -48,7 +48,7 @@
        </div>
      </div>
      <div class="col-md-3">
-       <div class="row text-center">
+       <div class="text-center">
          <div class="col-md-5 blue">
            <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
          </div>
