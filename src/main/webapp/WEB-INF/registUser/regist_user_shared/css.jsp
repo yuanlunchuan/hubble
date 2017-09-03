@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/font-awesome/css/font-awesome.min.css">
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/registUser/css/head.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/registUser/css/footer.css">
 <!-- Custom Fonts -->
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -1,4 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!-- <div>这是footer信息</div> -->
+<div class="text-center footer-container">Copyright © 2015-2017 hbble. All Rights Reserved.</div>

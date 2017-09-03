@@ -28,7 +28,7 @@
      <div class="col-md-3 margin-left-3">
        <div class="text-center">
          <div class="col-md-5 blue">
-           <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
+           <h1><i class="fa fa-sign-in" aria-hidden="true"></i></h1>
          </div>
          <div class="col-md-7 text-container">
            <h3>2017-8-30</h3>
@@ -39,7 +39,7 @@
      <div class="col-md-3">
        <div class="text-center">
          <div class="col-md-5 blue">
-           <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
+           <h1><i class="fa fa-link" aria-hidden="true"></i></h1>
          </div>
          <div class="col-md-7 text-container">
            <h3>127</h3>
@@ -50,7 +50,7 @@
      <div class="col-md-3">
        <div class="text-center">
          <div class="col-md-5 blue">
-           <h1><i class="fa fa-comments" aria-hidden="true"></i></h1>
+           <h1><i class="fa fa-flag" aria-hidden="true"></i></h1>
          </div>
          <div class="col-md-7 text-container">
            <h3>127</h3>
