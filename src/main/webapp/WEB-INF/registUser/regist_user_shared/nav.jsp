@@ -7,7 +7,7 @@
 			<li class="logo">
 				<!---<img src="" alt="" />--->
 			</li>
-			<li><a href="#">首页</a></li>
+			<li><a href="${pageContext.request.contextPath}/registUser/dashborad">首页</a></li>
 			<li><a href="#" >团队管理</a></li>
 			<li><a href="#">接口管理</a></li>
 			<li><a href="#" >在线体验</a></li>

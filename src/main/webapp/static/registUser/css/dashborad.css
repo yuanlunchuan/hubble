@@ -1,0 +1,15 @@
+.content{
+	margin-top: 40px;
+}
+.blue{
+	background: rgb(84, 173, 233);
+	color: #fff;
+	font-size: 30px;
+	height: 85px;;
+}
+.text-container{
+	background: rgb(242, 242, 242);
+}
+.margin-left-3{
+	padding-left: 3px;
+}
