@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hubble.entiy.User;
+import com.hubble.service.IUserService;
 import com.hubble.service.Impl.UserServiceImpl;
 import com.hubble.util.Enquiry;
 import com.hubble.util.PageHelper;
@@ -22,7 +23,7 @@ import com.hubble.util.PageHelper;
 @RequestMapping("/users")
 public class DemoController {
 	@Autowired
-	private UserServiceImpl userService;
+	private IUserService userService;
 
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String index(@RequestParam(value="keyword", required=false)String keyword,
@@ -60,8 +61,8 @@ public class DemoController {
 	}
 	
 	@RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
-	public String newPage(@PathVariable("id") String id, ModelMap model){
-		model.addAttribute("user", userService.findById(id));
+	public String edit(@PathVariable("id") String id, ModelMap model){
+		model.addAttribute("user", userService.findByUserId(id));
 		return "users/edit";
 	}
 
