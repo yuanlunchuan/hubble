@@ -18,17 +18,17 @@
      <div class="col-md-4 col-md-offset-4">
        <div class="dailog-container">
 
-		<form class="form-horizontal login-form">
+		<form class="form-horizontal login-form" action="<%= baseUrl%>/sessions/login" method="post">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-8">
-		      <input type="email" class="form-control">
+		      <input type="email" class="form-control" name="email">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">密码</label>
 		    <div class="col-sm-8">
-		      <input type="password" class="form-control">
+		      <input type="password" class="form-control" name="password">
 		    </div>
 		  </div>
 		  <div class="form-group">
