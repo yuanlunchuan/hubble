@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.hubble.entiy.ContactInfo;
+import com.hubble.service.IContactInfoService;
 import com.hubble.service.Impl.ContactInfoServiceImpl;
 
 @Controller
@@ -23,7 +24,7 @@ public class ContactUsController {
 //	static SimpleMailMessage mailMessage = (SimpleMailMessage) actx.getBean("mailMessage");
 
 	@Autowired
-	private ContactInfoServiceImpl contactInfoService;
+	private IContactInfoService contactInfoService;
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String newPage() {
