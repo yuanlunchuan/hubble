@@ -31,7 +31,7 @@ public class ContactInfo implements Serializable{
 	
 	@NotNull(message="电话号码不能为空")
 	@Column(name="phone_num")
-	private Integer phonenum;
+	private String phonenum;
 	
 	@NotEmpty(message="主题不能为空")
 	@Column(name="subject")
@@ -57,11 +57,11 @@ public class ContactInfo implements Serializable{
 		this.email = email;
 	}
 
-	public Integer getPhonenum() {
+	public String getPhonenum() {
 		return phonenum;
 	}
 
-	public void setPhonenum(Integer phonenum) {
+	public void setPhonenum(String phonenum) {
 		this.phonenum = phonenum;
 	}
 

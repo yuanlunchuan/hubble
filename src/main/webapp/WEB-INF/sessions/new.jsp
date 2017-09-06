@@ -17,7 +17,6 @@
    <div class="row">
      <div class="col-md-4 col-md-offset-4">
        <div class="dailog-container">
-
 		<form class="form-horizontal login-form" action="${pageContext.request.contextPath}/sessions" method="POST">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">Email</label>

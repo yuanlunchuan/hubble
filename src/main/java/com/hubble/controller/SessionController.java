@@ -18,7 +18,7 @@ import com.hubble.util.CryptographyUtil;
 
 @Controller
 @RequestMapping("/sessions")
-public class SessionControllrt {
+public class SessionController {
 	@Autowired
 	private IUserService userService;
 
@@ -38,14 +38,13 @@ public class SessionControllrt {
 			user = userService.findByEmail(user.getEmail()).get(0);
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("username", user.getUsername());
-			//backUrl = (backUrl == null || ("".equals(backUrl))) ? "/admin/dashborad" : "/" + backUrl;
 			System.out.println("-------µÇÂ¼³É¹¦");
 			return "sessions/new";
 		} catch (Exception e) {
 			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("errorMessage", "ÕËºÅÃÜÂë´íÎó");
 			System.out.println("-----µÇÂ¼Ê§°Ü");
-			return "redirect:/admin/sessions/new";
+			return "redirect:/sessions/new";
 		}
 	}
 }
