@@ -3,20 +3,20 @@ package com.hubble.service.Impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.maven.shared.utils.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import com.hubble.dao.UserDao;
+import com.hubble.dao.IUserDao;
 import com.hubble.entiy.User;
 import com.hubble.service.IUserService;
 import com.hubble.util.Enquiry;
@@ -24,8 +24,8 @@ import com.hubble.util.PageHelper;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {
-	@Autowired
-	private UserDao userDao;
+	@Resource
+	private IUserDao userDao;
 
 	public User findById(String id) {
 		return userDao.findOne(id);
@@ -92,5 +92,9 @@ public class UserServiceImpl implements IUserService {
 
 	public List<User> getUsersBySql(String userName) {
 		return userDao.getUsersBySql(userName);
+	}
+
+	public List<User> findByEmail(String email) {
+		return userDao.findByEmail(email);
 	}
 }

@@ -8,7 +8,7 @@ import javax.persistence.Query;
 
 import com.hubble.entiy.User;
 
-public class UserDaoImpl {
+public class IUserDaoImpl {
 	@PersistenceContext
 	private EntityManager em;
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hubble.entiy.User;
 import com.hubble.service.IUserService;
@@ -45,6 +46,12 @@ public class DemoController {
 		return "users/index";
 	}
 
+	@RequestMapping(value="/findByEmail", method=RequestMethod.GET)
+	@ResponseBody
+	public Object findByEmail(String email){
+		return userService.findByEmail(email);
+	}
+	
 	//此函数主要用于演示使用sql查询的方法
 	@RequestMapping(value="/getUsersBySql", method=RequestMethod.GET)
 	public String getUsersBySql(String userName,

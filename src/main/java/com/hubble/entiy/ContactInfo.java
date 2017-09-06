@@ -40,7 +40,7 @@ public class ContactInfo implements Serializable{
 	@NotEmpty(message="内容不能为空")
 	@Column(name="content")
 	private String content;
-
+	
 	public String getId() {
 		return id;
 	}
