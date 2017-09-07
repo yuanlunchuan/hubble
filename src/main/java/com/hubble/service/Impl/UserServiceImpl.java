@@ -94,7 +94,7 @@ public class UserServiceImpl implements IUserService {
 		return userDao.getUsersBySql(userName);
 	}
 
-	public List<User> findByEmail(String email) {
+	public User findByEmail(String email) {
 		return userDao.findByEmail(email);
 	}
 }

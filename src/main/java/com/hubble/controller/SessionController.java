@@ -35,9 +35,8 @@ public class SessionController {
 		try {
 			subject.login(token);
 			Session session = subject.getSession();
-			user = userService.findByEmail(user.getEmail()).get(0);
+			user = userService.findByEmail(user.getEmail());
 			session.setAttribute("userId", user.getId());
-			session.setAttribute("username", user.getUsername());
 			System.out.println("-------µÇÂ¼³É¹¦");
 			return "sessions/new";
 		} catch (Exception e) {

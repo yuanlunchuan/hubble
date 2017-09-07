@@ -20,6 +20,6 @@ public interface IUserService {
 	PageHelper<User> findByEnquiry(Enquiry enquiry);
 	
 	List<User> getUsersBySql(String userName);
-	
-	List<User> findByEmail(String email);
+
+	User findByEmail(String email);
 }

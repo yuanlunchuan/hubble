@@ -6,16 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.hubble.dao.UsersDao;
-import com.hubble.entiy.Users;
-import com.hubble.service.IUsersService;
+import com.hubble.entiy.User;
+import com.hubble.service.IUserService;
 
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
 	
 	@Autowired
-	private IUsersService usersService;
+	private IUserService userService;
 	
 	@RequestMapping(value="new", method=RequestMethod.GET)
 	public String newPage(){
@@ -24,14 +23,14 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value="/create", method=RequestMethod.POST)
-	public String registerUsers(Users users, Model model){
-		System.out.println("registerUsers users = "+users);
-		Users queryUser = usersService.findByEmail(users.getEmail());
+	public String registerUsers(User user, Model model){
+		System.out.println("registerUsers users = "+user);
+		User queryUser = userService.findByEmail(user.getEmail());
 		if (null != queryUser) {
 			System.out.println("该账号已注册，请直接登录");
 			return "redirect:/sessions/new";
 		}
-		usersService.save(users);
+		userService.save(user);
 		System.out.println("注册成功");
 		return "redirect:/sessions/new";
 	}

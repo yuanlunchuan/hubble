@@ -33,9 +33,9 @@ public class RegisterRealm extends AuthorizingRealm{
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String email = (String) token.getPrincipal();
-		List<User> users = userService.findByEmail(email);
-		if (!org.springframework.util.CollectionUtils.isEmpty(users)) {
-			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(users.get(0).getEmail(), users.get(0).getPassword(), "xx");
+		User user = userService.findByEmail(email);
+		if (null!=user) {
+			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getEmail(), user.getPassword(), "xx");
 			return authcInfo;
 		} else {
 			return null;

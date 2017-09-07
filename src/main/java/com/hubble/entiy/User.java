@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "i_user")
+@Table(name = "i_users")
 public class User implements Serializable {
 	private static final long serialVersionUID = -8869037297365896519L;
 	@Id
@@ -22,33 +22,8 @@ public class User implements Serializable {
 	@Column(name = "email")
 	private String email;
 
-	@Column(name = "username")
-	private String username;
-
 	@Column(name = "password")
 	private String password;
-
-	@Column(name = "nick_name")
-	private String nickName;
-
-	@Column(name = "age")
-	private Integer age;
-
-	public String getNickName() {
-		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
 
 	public String getId() {
 		return id;
@@ -56,22 +31,6 @@ public class User implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getEmail() {
@@ -82,9 +41,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	@Override
-	public String toString() {
-		return " {\"id\":\"" + id + "\",\"username\":\"" + username + "\",\"password\":\"" + password + "\"} ";
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
