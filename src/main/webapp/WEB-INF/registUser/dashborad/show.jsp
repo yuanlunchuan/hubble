@@ -83,7 +83,7 @@
                 <td>关于网站升级..</td>
                 <td>系统</td>
                 <td>2018-3-2</td>
-                <td>已读</td>
+                <td><span class="label label-default">已读</span></td>
                 <td><button class="btn btn-xs btn-danger">删除</button></td>
               </tr>
 		      <tr>
@@ -91,7 +91,7 @@
                 <td>请快速加入接口..</td>
                 <td>张三</td>
                 <td>2017-3-08</td>
-                <td>未读</td>
+                <td><span class="label label-info">未读</span></td>
                 <td><button class="btn btn-xs btn-danger">删除</button></td>
               </tr>
 		      <tr>
@@ -99,7 +99,7 @@
                 <td>新功能已完成开发</td>
                 <td>王二</td>
                 <td>2018-7-12</td>
-                <td>已读</td>
+                <td><span class="label label-default">已读</span></td>
                 <td><button class="btn btn-xs btn-danger">删除</button></td>
               </tr>
 		      <tr>
@@ -107,7 +107,7 @@
                 <td>需求已发至王经理..</td>
                 <td>王妃</td>
                 <td>2018-5-4</td>
-                <td>已读</td>
+                <td><span class="label label-default">已读</span></td>
                 <td><button class="btn btn-xs btn-danger">删除</button></td>
               </tr>
 		      <tr>
@@ -115,7 +115,7 @@
                 <td>接口文档待存在缺陷</td>
                 <td>刘二</td>
                 <td>2017-5-9</td>
-                <td>已读</td>
+                <td><span class="label label-info">未读</span></td>
                 <td><button class="btn btn-xs btn-danger">删除</button></td>
               </tr>
             </table>

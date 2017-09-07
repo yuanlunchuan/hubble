@@ -1,0 +1,36 @@
+.content{
+	background: rgb(255, 255, 255);
+	margin-bottom: 50px;
+}
+.team-area{
+	border-right: 1px solid #8E8E8E;
+}
+.add-team-button{
+	float: right;
+}
+.team-title{
+	float: left;
+}
+.clear{
+	clear:both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+.team-list{
+	margin-top: 30px;
+	border-top: 1px solid rgb(225, 225, 225);
+}
+.team-list li{
+	border-bottom: 1px solid rgb(225, 225, 225);
+}
+.red-color{
+	color: #f00;
+}
+.remove-area{
+	padding-top: 5%;
+}
+.menue-row{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
