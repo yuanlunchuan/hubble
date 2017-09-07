@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="col-md-7 text-right">
-      <button type="button" class="btn btn-info" aria-label="Left Align">
+      <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target="#myModal">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
       </button>
     </div>
@@ -158,6 +158,43 @@
 	</nav>
  </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">新增项目</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal">
+		  <div class="form-group">
+		    <label class="col-md-2 control-label">项目名称</label>
+		    <div class="col-md-10">
+		      <input type="text" class="form-control">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-md-2 control-label">项目简介</label>
+		    <div class="col-md-10">
+		      <input type="password" class="form-control">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-md-2 control-label">项目描述</label>
+		    <div class="col-md-10">
+		      <textarea type="password" class="form-control" rows="5"></textarea>
+		    </div>
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
  <%@include file="../regist_user_shared/footer.jsp" %>
  <%@include file="../regist_user_shared/js.jsp" %>
 </body>
