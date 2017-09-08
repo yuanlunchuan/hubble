@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-md-4 team-area">
       <h4 class="team-title">成员列表</h4>
-      <button class="btn btn-info add-team-button">
+      <button class="btn btn-info add-team-button" data-toggle="modal" data-target="#myModal">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增成员
       </button>
       <div class="clear"></div>
@@ -39,7 +39,7 @@
 		    <h4 class="media-heading">张真人</h4>
 		    799652013@qq.com
 		  </div>
-		  <div class="media-right remove-area">
+		  <div class="media-right remove-area hidden">
 		    <span class="glyphicon glyphicon-remove red-color"></span>
 		  </div>
 		 </li>
@@ -53,7 +53,7 @@
 		    <h4 class="media-heading">张真人</h4>
 		    799652013@qq.com
 		  </div>
-		  <div class="media-right remove-area">
+		  <div class="media-right remove-area hidden">
 		    <span class="glyphicon glyphicon-remove red-color"></span>
 		  </div>
 		 </li>
@@ -67,7 +67,7 @@
 		    <h4 class="media-heading">张真人</h4>
 		    799652013@qq.com
 		  </div>
-		  <div class="media-right remove-area">
+		  <div class="media-right remove-area hidden">
 		    <span class="glyphicon glyphicon-remove red-color"></span>
 		  </div>
 		 </li>
@@ -81,7 +81,7 @@
 		    <h4 class="media-heading">张真人</h4>
 		    799652013@qq.com
 		  </div>
-		  <div class="media-right remove-area">
+		  <div class="media-right remove-area hidden">
 		    <span class="glyphicon glyphicon-remove red-color"></span>
 		  </div>
 		 </li>
@@ -95,7 +95,7 @@
 		    <h4 class="media-heading">张真人</h4>
 		    799652013@qq.com
 		  </div>
-		  <div class="media-right remove-area">
+		  <div class="media-right remove-area hidden">
 		    <span class="glyphicon glyphicon-remove red-color"></span>
 		  </div>
 		 </li>
@@ -157,7 +157,34 @@
   </div>
  </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">新增成员</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+		    <div class="col-md-10">
+		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">新增</button>
+      </div>
+    </div>
+  </div>
+</div>
+
  <!-- <%@include file="../regist_user_shared/footer.jsp" %> -->
  <%@include file="../regist_user_shared/js.jsp" %>
+ <script src="${pageContext.request.contextPath}/static/registUser/js/project_show.js"></script>
 </body>
 </html>
