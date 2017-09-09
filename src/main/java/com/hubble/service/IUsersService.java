@@ -1,18 +1,19 @@
 package com.hubble.service;
 
 import java.util.List;
-import com.hubble.entiy.Users;
+
+import com.hubble.entiy.User;
 
 public interface IUsersService {
-	Users save(Users users);
+	User save(User user);
 
 	void deleteByUsersId(String userId);
 
-	Users update(Users users);
+	User update(User user);
 
-	Users findByUsersId(String userId);
+	User findByUsersId(String userId);
 	
-	List<Users> findAll();
+	List<User> findAll();
 	
-	Users findByEmail(String email);
+	User findByEmail(String email);
 }
