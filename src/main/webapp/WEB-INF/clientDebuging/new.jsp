@@ -20,28 +20,34 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">请求参数录入</div>
 		  <div class="panel-body">
-			<form class="form-horizontal">
+			<form action="${pageContext.request.contextPath}/clientDebuging" method="post" class="form-horizontal">
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">web接口</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control">
+			      <input type="text" class="form-control" name="api">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">请求方式</label>
 			    <div class="col-sm-10">
-			      <select class="form-control">
-				    <option>GET请求</option>
-				    <option>POST请求</option>
-				    <option>DELETE请求</option>
-				    <option>PUT请求</option>
+			      <select class="form-control" name="method">
+				    <option value="get">GET请求</option>
+				    <option value="post">POST请求</option>
+				    <option value="delete">DELETE请求</option>
+				    <option value="put">PUT请求</option>
 				  </select>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">参数</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="3"></textarea>
+			      <textarea class="form-control" rows="3" name="param"></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">响应数据</label>
+			    <div class="col-sm-10">
+			      <textarea class="form-control" rows="3" name="response"></textarea>
 			    </div>
 			  </div>
 			  <div class="form-group">
