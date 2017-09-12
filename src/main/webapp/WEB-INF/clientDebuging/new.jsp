@@ -22,7 +22,13 @@
 		  <div class="panel-body">
 			<form action="${pageContext.request.contextPath}/clientDebuging" method="post" class="form-horizontal">
 			  <div class="form-group">
-			    <label class="col-sm-2 control-label">web接口</label>
+			    <label class="col-sm-2 control-label">接口名称</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="apiName">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">接口url</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" name="api">
 			    </div>

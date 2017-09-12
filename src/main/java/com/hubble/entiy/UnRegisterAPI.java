@@ -24,6 +24,9 @@ public class UnRegisterAPI implements Serializable{
 	@Column(name = "api")
 	private String api;
 	
+	@Column(name = "api_name")
+	private String apiName;
+	
 	@Column(name = "method")
 	private String method;
 	
@@ -41,6 +44,14 @@ public class UnRegisterAPI implements Serializable{
 	
 	@Column(name = "alive")
 	private Boolean alive;
+	
+	public String getApiName() {
+		return apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
+	}
 
 	public String getParam() {
 		return param;

@@ -1,5 +1,7 @@
 package com.hubble.service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,10 @@ public class UnRegisterAPIServiceImpl implements IUnRegisterAPIService {
 
 	public UnRegisterAPI findByApi(String api) {
 		return unRegisterAPIDao.findByApi(api);
+	}
+
+	public List<UnRegisterAPI> getAll() {
+		return unRegisterAPIDao.findAll();
 	}
 
 }
