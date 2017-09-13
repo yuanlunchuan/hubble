@@ -7,6 +7,7 @@
 <head>
   <title>接口调试</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="${pageContext.request.contextPath}/static/lib/toast/toast.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/custom/css/debugging_index.css" rel="stylesheet">
 </head>
 <body>
@@ -31,6 +32,7 @@
            <td>api</td>
            <td>请求方式</td>
            <td>调用次数</td>
+           <td>操作</td>
          </tr>
          <c:forEach var="unRegisterAPI" items="${unRegisterAPIs}" varStatus="status">
 		  <tr>
@@ -39,6 +41,7 @@
 		    <td><a href="${pageContext.request.contextPath}/clientDebuging/detail/${unRegisterAPI.id}">${unRegisterAPI.api }</a></td>
 		    <td>${unRegisterAPI.method }</td>
 		    <td>${unRegisterAPI.invokeCount }</td>
+		    <td><button class="btn btn-info copy-button">点击复制</button> </td>
 		  </tr>
          </c:forEach>
         </table>
@@ -48,5 +51,7 @@
  
  <%@include file="../client_shared/_footer.jsp" %>
  <%@include file="../client_shared/js.jsp" %>
+ <script src="${pageContext.request.contextPath}/static/lib/toast/toast.min.js"></script>
+ <script src="${pageContext.request.contextPath}/static/custom/js/debugging_index.js"></script>
 </body>
 </html>
