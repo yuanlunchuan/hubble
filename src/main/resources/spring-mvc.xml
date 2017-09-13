@@ -65,7 +65,7 @@
 	<mvc:resources location="/" mapping="/**/*.docx" />
 	<mvc:resources mapping="/ueditor/**" location="/ueditor/" />
 
-	<mvc:annotation-driven />
+	<!-- <mvc:annotation-driven /> -->
 	<context:annotation-config />
 	<!-- 存储区域设置信息 -->
 	<bean id="localeResolver"
@@ -82,4 +82,14 @@
 			<property name="paramName" value="lang" />
 		</bean>
 	</mvc:interceptors>
+	
+	<!-- 解决中文乱码 -->
+	<mvc:annotation-driven>  
+	    <mvc:message-converters register-defaults="true">  
+	        <bean class="org.springframework.http.converter.StringHttpMessageConverter">  
+	            <constructor-arg value="UTF-8"/>  
+	            <property name="writeAcceptCharset" value="false"/>  
+	        </bean>  
+	    </mvc:message-converters>  
+	</mvc:annotation-driven>  
 </beans>
