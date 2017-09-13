@@ -1,6 +1,7 @@
 package com.hubble.service.Impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,6 +11,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.maven.shared.utils.StringUtils;
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -54,7 +56,7 @@ public class UserServiceImpl implements IUserService {
 	public PageHelper<User> findByEnquiry(final Enquiry enquiry) {
 		PageHelper<User> result = new PageHelper<User>();
 
-		Pageable p = new PageRequest(enquiry.getPageNumber()-1, enquiry.getPageSize());
+		Pageable p = new PageRequest(enquiry.getPageNumber() - 1, enquiry.getPageSize());
 
 		Specification<User> specification = new Specification<User>() {
 			public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -77,8 +79,8 @@ public class UserServiceImpl implements IUserService {
 					predicates.add(agePre);
 				}
 
-			    Predicate[] p = new Predicate[predicates.size()];  
-			    return cb.and(predicates.toArray(p));
+				Predicate[] p = new Predicate[predicates.size()];
+				return cb.and(predicates.toArray(p));
 			}
 		};
 
@@ -96,5 +98,47 @@ public class UserServiceImpl implements IUserService {
 
 	public User findByEmail(String email) {
 		return userDao.findByEmail(email);
+	}
+
+	public boolean processActivate(String email, String validateCode) {
+		try {
+			// 数据访问层，通过email获取用户信息
+			User user = findByEmail(email);
+			// 验证用户是否存在
+			if (user != null) {
+				// 验证用户激活状态
+				if (user.getStatus() == 0) {
+					// 没激活
+					Date currentTime = new Date();// 获取当前时间
+					// 验证链接是否过期
+					currentTime.before(user.getRegisterTime());
+					if (currentTime.before(user.getLastActivateTime())) {
+						// 验证激活码是否正确
+						if (validateCode.equals(user.getValidateCode())) {
+							// 激活成功， 并更新用户的激活状态，为已激活
+							System.out.println("==sq===" + user.getStatus());
+							user.setStatus(1);// 把状态改为激活
+							System.out.println("==sh===" + user.getStatus());
+							userDao.save(user);
+							return true;
+						} else {
+							System.out.println("激活码不正确");
+						}
+					} else {
+						System.out.println("激活码已过期！");
+					}
+				} else {
+					System.out.println("邮箱已激活，请登录！");
+					return true;
+				}
+			} else {
+				System.out.println("该邮箱未注册（邮箱地址不存在）！");
+			}
+		} catch (ServiceException e) {
+			e.printStackTrace();
+			System.out.println("ServiceException : " + e);
+		}
+
+		return false;
 	}
 }

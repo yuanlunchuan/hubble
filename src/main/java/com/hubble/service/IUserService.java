@@ -22,4 +22,6 @@ public interface IUserService {
 	List<User> getUsersBySql(String userName);
 
 	User findByEmail(String email);
+
+	boolean processActivate(String email, String validateCode);
 }

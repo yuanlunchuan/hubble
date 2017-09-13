@@ -51,4 +51,39 @@ public class SendMailHelper {
 		}
 		return "Success";
 	}
+	
+	public static String sendHtmlEmail(String subject, StringBuffer msg, String sendTo) {
+		try {
+			// final String username = user;
+			// final String pass = pw;
+			// 需要认证
+			Properties props = new Properties();
+			props.put("mail.smtp.host", HOST);
+			props.put("mail.smtp.auth", "true");
+			props.put("mail.transport.protocol", PROTOCOL);
+			props.put("mail.from", FROM_MAIL);
+			// 创建发送器
+			JavaMailSenderImpl sender = new JavaMailSenderImpl();
+			sender.setHost(HOST);
+			sender.setUsername(FROM_USER_NAME);
+			sender.setPassword(MAIL_PASSWORD);
+			// 创建消息
+			MimeMessage message = sender.createMimeMessage();
+			message.addHeader("X-Mailer", "Java Mailer");
+			MimeMessageHelper helper = new MimeMessageHelper(message);
+			helper.setTo(sendTo);
+			helper.setFrom(FROM_MAIL, FROM_USER_NICK_NAME);
+			helper.setSubject(subject);
+			helper.setText(msg.toString());
+			helper.setSentDate(new Date());
+			// 开始发送
+			sender.setJavaMailProperties(props);
+			sender.send(message);
+		} catch (Exception e) {
+			System.out.println("Error:" + e);
+			return "Failure";
+		}
+		return "Success";
+	}
+
 }
