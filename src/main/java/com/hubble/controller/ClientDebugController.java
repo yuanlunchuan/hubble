@@ -38,7 +38,7 @@ public class ClientDebugController {
 	public String newPage(){
 		return "clientDebuging/new";
 	}
-	
+
 	@RequestMapping(value="/{api}", method=RequestMethod.GET)
 	@ResponseBody
 	public String invoke(@PathVariable("api") String api){
