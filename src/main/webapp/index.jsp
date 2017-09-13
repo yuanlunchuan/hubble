@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/hubble/">首页</a></li>
-        <li><a href="/hubble/clientDebuging">接口调试</a></li>
+        <li><a href="/hubble/clientDebuging/index">接口调试</a></li>
         <li><a href="/hubble/aboutUs/show">关于我们</a></li>
         <li><a href="/hubble/contactUs/new">联系我们</a></li>
         <li><a href="<%=baseUrl %>/sessions/new">登录注册</a></li>

@@ -26,4 +26,8 @@ public class UnRegisterAPIServiceImpl implements IUnRegisterAPIService {
 		return unRegisterAPIDao.findAll();
 	}
 
+	public UnRegisterAPI findById(String id) {
+		return unRegisterAPIDao.findOne(id);
+	}
+
 }

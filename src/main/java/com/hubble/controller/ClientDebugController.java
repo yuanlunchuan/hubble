@@ -1,6 +1,9 @@
 package com.hubble.controller;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +26,12 @@ public class ClientDebugController {
 	public String index(Integer pageSize, Integer pageNumber, ModelMap model){
 		model.addAttribute("unRegisterAPIs", unRegisterAPIService.getAll());
 		return "clientDebuging/index";
+	}
+	
+	@RequestMapping(value="/detail/{id}", method=RequestMethod.GET)
+	public String show(ModelMap model, @PathVariable("id") String id){
+		model.addAttribute("unRegisterAPI", unRegisterAPIService.findById(id));
+		return "clientDebuging/show";
 	}
 
 	@RequestMapping(value="", method=RequestMethod.GET)
