@@ -1,6 +1,7 @@
 package com.hubble.controller;
 
 import java.util.Date;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,12 +22,14 @@ public class RegisterController {
 
 	@Autowired
 	private IUserService userService;
+	ResourceBundle parmResource = ResourceBundle.getBundle("config");
 
 	@RequestMapping(value = "new", method = RequestMethod.GET)
 	public String newPage(HttpServletRequest request) {
 		System.out.println("Enter register page");
 		String action = request.getParameter("action");
 		System.out.println("registerUsers action = " + action);
+		
 		if("activate".equals(action)){
 			//激活
             String email = request.getParameter("email");//获取email
@@ -64,7 +67,10 @@ public class RegisterController {
 		userService.save(user);
 
 		StringBuffer msg = new StringBuffer("点击下面链接激活账号，48小时生效，否则重新注册账号，链接只能使用一次，请尽快激活！\n");
-		msg.append("http://localhost:8080/hubble/register/new?action=activate&email=");
+		
+		String host = parmResource.getString("host");
+		msg.append(host+"/register/new?action=activate&email=");
+		
 		msg.append(user.getEmail());
 		msg.append("&validateCode=");
 		msg.append(user.getValidateCode());
