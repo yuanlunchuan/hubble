@@ -33,6 +33,12 @@ public class ClientDebugController {
 		model.addAttribute("unRegisterAPI", unRegisterAPIService.findById(id));
 		return "clientDebuging/show";
 	}
+	
+	@RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
+	public String edit(ModelMap model, @PathVariable("id") String id){
+		model.addAttribute("unRegisterAPI", unRegisterAPIService.findById(id));
+		return "clientDebuging/edit";
+	}
 
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String newPage(){
@@ -62,6 +68,12 @@ public class ClientDebugController {
 		unRegisterAPI.setAlive(true);
 		unRegisterAPI.setCreatedAt(new Date());
 		unRegisterAPI.setInvokeCount(0);
+		unRegisterAPIService.save(unRegisterAPI);
+		return "redirect:/clientDebuging/index";
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(UnRegisterAPI unRegisterAPI){
 		unRegisterAPIService.save(unRegisterAPI);
 		return "redirect:/clientDebuging/index";
 	}
