@@ -47,16 +47,19 @@ public class ClientDebugController {
 
 	@RequestMapping(value="/{api}", method=RequestMethod.GET)
 	@ResponseBody
-	public String invoke(@PathVariable("api") String api){
+	public String getInvoke(@PathVariable("api") String api){
 		UnRegisterAPI unRegisterAPI = unRegisterAPIService.findByApi(api);
-		unRegisterAPI.setInvokeCount(unRegisterAPI.getInvokeCount()+1);
+		if(null==unRegisterAPI){
+			return "";
+		}
+		unRegisterAPI.setInvokeCount((null==unRegisterAPI.getInvokeCount()?0:unRegisterAPI.getInvokeCount())+1);
 		unRegisterAPIService.save(unRegisterAPI);
 		return unRegisterAPI.getResponse();
 	}
 
 	@RequestMapping(value="/{api}", method=RequestMethod.POST)
 	@ResponseBody
-	public String newPage(@PathVariable("api") String api){
+	public String postInvoke(@PathVariable("api") String api){
 		UnRegisterAPI unRegisterAPI = unRegisterAPIService.findByApi(api);
 		unRegisterAPI.setInvokeCount(unRegisterAPI.getInvokeCount()+1);
 		unRegisterAPIService.save(unRegisterAPI);

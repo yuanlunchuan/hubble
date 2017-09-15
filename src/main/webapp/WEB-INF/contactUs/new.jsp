@@ -70,7 +70,7 @@
 			<div class="col-md-6">
 				<h3 style="margin-top: -5px;">联系我们</h3>
 				<h4 class="orange">邮件:</h4>
-				<p>799652013@qq.com</p>
+				<p>xxxxxx@qq.com</p>
 				<h4 class="orange">公众号:</h4>
 				<img width="150px" class="img-responsive"
 					src="${pageContext.request.contextPath}/static/custom/image/qr_code.jpg">

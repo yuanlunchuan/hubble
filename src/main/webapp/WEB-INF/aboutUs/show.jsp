@@ -55,7 +55,7 @@
        <img src="${pageContext.request.contextPath}/static/custom/image/yuan_icon.png" class="img-responsive">
      </div>
      <div class="col-md-8">
-       <h2>袁伦川</h2>
+       <h2>东方先生</h2>
       <div>
           <a href="https://user.qzone.qq.com/799652013/infocenter" title="微博"><span class="space"><i class="fa fa-weibo"></i></span></a>
           <a href="mailto:open@799652013@qq.com" title="商务合作"><span class="space"><i class="fa fa-envelope-o"></i></span></a>
@@ -69,7 +69,7 @@
    </div>
    <div class="row">
      <div class="col-md-8 text-right">
-       <h2>余洪东</h2>
+       <h2>程序猿大叔</h2>
       <div>
           <a href="https://user.qzone.qq.com/799652013/infocenter" title="微博"><span class="space"><i class="fa fa-weibo"></i></span></a>
           <a href="mailto:open@799652013@qq.com" title="商务合作"><span class="space"><i class="fa fa-envelope-o"></i></span></a>

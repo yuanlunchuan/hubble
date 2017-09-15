@@ -41,7 +41,9 @@
 		    <td><a href="${pageContext.request.contextPath}/clientDebuging/detail/${unRegisterAPI.id}">${unRegisterAPI.api }</a></td>
 		    <td>${unRegisterAPI.method }</td>
 		    <td>${unRegisterAPI.invokeCount }</td>
-		    <td><button class="btn btn-info copy-button hidden">点击复制</button><a class="btn btn-info copy-button" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.id}/edit">编辑</a> </td>
+		    <td><button class="btn btn-info copy-button hidden">点击复制</button>
+		    <a class="btn btn-info copy-button" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.id}/edit">编辑</a>
+		    <a class="btn btn-info copy-button" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.api}">查看响应数据</a> </td>
 		  </tr>
          </c:forEach>
         </table>
