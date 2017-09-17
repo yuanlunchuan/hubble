@@ -113,9 +113,9 @@
            </div>
          </div>
        <div class="col-md-7 text-right">
-         <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target="#myModal">
-           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-         </button>
+         <a type="button" class="btn btn-info" href="${pageContext.request.contextPath}/registUser/interfaces/new">
+                           新增接口
+         </a>
        </div>
      </div>
      

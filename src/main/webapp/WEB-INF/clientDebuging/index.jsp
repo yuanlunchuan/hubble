@@ -31,7 +31,6 @@
            <td>接口名称</td>
            <td>api</td>
            <td>请求方式</td>
-           <td>调用次数</td>
            <td>操作</td>
          </tr>
          <c:forEach var="unRegisterAPI" items="${unRegisterAPIs}" varStatus="status">
@@ -40,10 +39,9 @@
 		    <td>${unRegisterAPI.apiName }</td>
 		    <td><a href="${pageContext.request.contextPath}/clientDebuging/detail/${unRegisterAPI.id}">${unRegisterAPI.api }</a></td>
 		    <td>${unRegisterAPI.method }</td>
-		    <td>${unRegisterAPI.invokeCount }</td>
 		    <td><button class="btn btn-info copy-button hidden">点击复制</button>
 		    <a class="btn btn-info copy-button" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.id}/edit">编辑</a>
-		    <a class="btn btn-info copy-button" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.api}">查看响应数据</a> </td>
+		    <a class="btn btn-info" href="${pageContext.request.contextPath}/clientDebuging/${unRegisterAPI.api}">查看响应数据</a> </td>
 		  </tr>
          </c:forEach>
         </table>

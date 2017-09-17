@@ -12,4 +12,9 @@ public class InterfaceController {
 	public String index(){
 		return "registUser/interfaces/index";
 	}
+	
+	@RequestMapping(value="/new", method=RequestMethod.GET)
+	public String newPage(){
+		return "registUser/interfaces/new";
+	}
 }
