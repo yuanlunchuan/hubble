@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,11 +50,13 @@ public class ClientDebugController {
 	@ResponseBody
 	public String getInvoke(@PathVariable("api") String api){
 		UnRegisterAPI unRegisterAPI = unRegisterAPIService.findByApi(api);
-		if(null==unRegisterAPI){
-			return "";
-		}
+		Optional<UnRegisterAPI> unRegisterAPIOpt = Optional.ofNullable(unRegisterAPI);
+        if(!unRegisterAPIOpt.isPresent()){
+        	return "{}";
+        }
 		unRegisterAPI.setInvokeCount((null==unRegisterAPI.getInvokeCount()?0:unRegisterAPI.getInvokeCount())+1);
 		unRegisterAPIService.save(unRegisterAPI);
+
 		return unRegisterAPI.getResponse();
 	}
 
