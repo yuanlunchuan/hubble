@@ -1,5 +1,7 @@
 package com.hubble.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,8 @@ public class ContactUsController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String create(ContactInfo contactInfo, Model model) {
 		System.out.println("ContactUsController class execute create method");
+		contactInfo.setCreatedAt(new Date());
+		contactInfo.setAlive(1);
 		contactInfoService.save(contactInfo);
 
 		String subject = contactInfo.getSubject(); // 标题

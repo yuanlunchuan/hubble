@@ -41,12 +41,12 @@ public class User implements Serializable {
 
 	// @Column(name="createdAt")
 	// private Date createdAt;
-	//
-	// @Column(name="updatedAt")
-	// private Date updatedAt;
-	//
-	// @Column(name="alive")
-	// private boolean alive;
+
+	@Column(name = "updatedAt")
+	private Date updatedAt;
+
+	@Column(name = "alive")
+	private Integer alive;
 
 	public String getId() {
 		return id;
@@ -87,13 +87,29 @@ public class User implements Serializable {
 	public void setValidateCode(String validateCode) {
 		this.validateCode = validateCode;
 	}
-	
+
 	public Date getRegisterTime() {
 		return registerTime;
 	}
 
 	public void setRegisterTime(Date registerTime) {
 		this.registerTime = registerTime;
+	}
+	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Integer isAlive() {
+		return alive;
+	}
+
+	public void setAlive(Integer alive) {
+		this.alive = alive;
 	}
 
 	@Transient
@@ -108,7 +124,8 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", status=" + status
-				+ ", validateCode=" + validateCode + "]";
+				+ ", validateCode=" + validateCode + ", registerTime=" + registerTime + ", updatedAt=" + updatedAt
+				+ ", alive=" + alive + "]";
 	}
 
 }
