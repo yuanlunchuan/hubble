@@ -17,4 +17,9 @@ public class InterfaceController {
 	public String newPage(){
 		return "registUser/interfaces/new";
 	}
+
+	@RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
+	public String edit(){
+		return "registUser/interfaces/edit";
+	}
 }

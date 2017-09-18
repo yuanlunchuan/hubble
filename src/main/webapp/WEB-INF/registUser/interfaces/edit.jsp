@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新增接口</title>
+<title>编辑接口</title>
 <link href="${pageContext.request.contextPath}/static/registUser/css/interface_new.css" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +18,7 @@
        <ol class="breadcrumb">
          <li><a href="${pageContext.request.contextPath}/registUser/projects">项目管理</a></li>
          <li><a href="${pageContext.request.contextPath}/registUser/projects/1">接口列表</a></li>
-         <li class="active">新增接口</li>
+         <li class="active">编辑接口</li>
        </ol>     
      </div>
    </div>
