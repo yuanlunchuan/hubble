@@ -16,7 +16,7 @@
  <div class="container-fluid content">
    <div class="row">
 
-     <div class="col-md-6 col-md-offset-3 request-form">
+     <div class="col-md-6 request-form">
 		<div class="panel panel-default">
 		  <div class="panel-heading">请求参数录入</div>
 		  <div class="panel-body">
@@ -53,23 +53,37 @@
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">响应数据</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="3" name="response"></textarea>
+			      <label><a href="#editor_holder" name="1F">编辑响应数据</a></label>
+			      <textarea class="form-control hidden" rows="3" name="response"></textarea>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">提交</button>
+			      <button type="submit" class="btn btn-info">提交</button>
 			    </div>
 			  </div>
 			</form>
+			<div class="col-md-12">
+			  <div id="editor_holder"></div>
+			</div>
 		  </div>
 		</div>
      </div>
-
+     
+   <div class="col-md-6">
+	  <div class="form-group">
+	    <div class="col-sm-12">
+	      <textarea class="form-control" rows="20" id="jsonText"></textarea>
+	    </div>
+	  </div>
    </div>
+   </div>
+
  </div>
  
  <%@include file="../client_shared/_footer.jsp" %>
  <%@include file="../client_shared/js.jsp" %>
+ <script src="${pageContext.request.contextPath}/static/lib/jsoneditor/jsoneditor.min.js"></script>
+ <script src="${pageContext.request.contextPath}/static/custom/js/debugging_new.js"></script>
 </body>
 </html>

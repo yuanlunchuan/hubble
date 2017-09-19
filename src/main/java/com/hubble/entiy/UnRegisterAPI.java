@@ -21,7 +21,7 @@ public class UnRegisterAPI implements Serializable{
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 	
-	@Column(name = "api")
+	@Column(name = "api", unique = true)
 	private String api;
 	
 	@Column(name = "api_name")
