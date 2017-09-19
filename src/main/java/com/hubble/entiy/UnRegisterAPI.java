@@ -31,19 +31,19 @@ public class UnRegisterAPI implements Serializable{
 	private String method;
 	
 	@Column(name = "response")
-	private String response;
+	private String response = "";
 	
 	@Column(name = "param")
-	private String param;
+	private String param = "";
 	
 	@Column(name = "created_at")
-	private Date createdAt;
+	private Date createdAt = new Date();
 	
 	@Column(name = "invoke_count")
-	private Integer invokeCount;
+	private Integer invokeCount = 0;
 	
 	@Column(name = "alive")
-	private Boolean alive;
+	private Boolean alive = true;
 	
 	public String getApiName() {
 		return apiName;

@@ -10,7 +10,7 @@
 			<li><a href="${pageContext.request.contextPath}/registUser/dashborad">首页</a></li>
 			<li class="hidden"><a href="${pageContext.request.contextPath}/registUser/teams" >团队管理</a></li>
 			<li><a href="${pageContext.request.contextPath}/registUser/projects">项目管理</a></li>
-			<li><a href="#" >在线体验</a></li>
+			<li><a href="#" >邮件通知设置</a></li>
 			<li><a href="#" >个人设置</a></li>
 			<li class="search">
 				<a class="search_pic"></a>

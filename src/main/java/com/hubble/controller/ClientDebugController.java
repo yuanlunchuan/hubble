@@ -74,9 +74,6 @@ public class ClientDebugController {
 
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String create(UnRegisterAPI unRegisterAPI){
-		unRegisterAPI.setAlive(true);
-		unRegisterAPI.setCreatedAt(new Date());
-		unRegisterAPI.setInvokeCount(0);
 		unRegisterAPIService.save(unRegisterAPI);
 		return "redirect:/clientDebuging/index";
 	}
