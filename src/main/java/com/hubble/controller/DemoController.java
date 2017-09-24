@@ -61,7 +61,6 @@ public class DemoController {
 		return userService.findByEmail(email);
 	}
 
-	// ´Ëº¯ÊıÖ÷ÒªÓÃÓÚÑİÊ¾Ê¹ÓÃsql²éÑ¯µÄ·½·¨
 	@RequestMapping(value = "/getUsersBySql", method = RequestMethod.GET)
 	public String getUsersBySql(String userName, ModelMap model) {
 		PageHelper<User> collection = new PageHelper<User>();
@@ -103,17 +102,17 @@ public class DemoController {
 	@RequestMapping(value = "/download")
 	public ResponseEntity<byte[]> download(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
-		// »ñÈ¡¶ÔÓ¦ÎÄ¼şÃûºÍµØÖ·
+		// ï¿½ï¿½È¡ï¿½ï¿½Ó¦ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Íµï¿½Ö·
 		String fileName = "yuan.zip";
 		String filePath = "d://yuan.zip";
 		File file = new File(filePath);
 		try {
-			fileName = new String(fileName.getBytes("UTF-8"), "iso-8859-1");// ÎªÁË½â¾öÖĞÎÄÃû³ÆÂÒÂëÎÊÌâ
+			fileName = new String(fileName.getBytes("UTF-8"), "iso-8859-1");// Îªï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 
-		// ÏÂÔØÎÄ¼ş
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentDispositionFormData("attachment", fileName);
 		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);

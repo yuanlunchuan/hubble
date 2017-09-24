@@ -23,7 +23,7 @@
 					action="${pageContext.request.contextPath}/register/create"
 					method="post">
 					<div class="form-group">
-						<label class="col-md-3 control-label">email<span
+						<label class="col-md-3 control-label">Email<span
 							class="red-color">*</span></label>
 						<div class="col-md-9">
 							<input type="email" class="form-control" name="email">
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<%@include file="../client_shared/_footer.jsp"%>
 	<script>
 		function validate() {
 			var pwd = document.getElementById("pwd").value;
@@ -78,7 +78,6 @@
 			}
 		}
 	</script>
-	<%@include file="../client_shared/_footer.jsp"%>
 	<%@include file="../client_shared/js.jsp"%>
 	<script
 		src="${pageContext.request.contextPath}/static/lib/yanzhengma/gVerify.js"></script>

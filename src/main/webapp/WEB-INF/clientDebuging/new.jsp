@@ -53,8 +53,7 @@
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">响应数据</label>
 			    <div class="col-sm-10">
-			      <label><a href="#editor_holder" name="1F">编辑响应数据</a></label>
-			      <textarea class="form-control hidden" rows="3" name="response"></textarea>
+			      <textarea class="form-control" rows="3" name="response"></textarea>
 			    </div>
 			  </div>
 			  <div class="form-group">

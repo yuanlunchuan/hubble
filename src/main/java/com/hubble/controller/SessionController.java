@@ -29,6 +29,14 @@ public class SessionController {
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String login(User user, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+		User dbUser = userService.findByEmail(user.getEmail());
+		if(null!=dbUser&&CryptographyUtil.md5(user.getPassword(), "hubble").equals(dbUser.getPassword())){
+			return "redirect:/registUser/dashborad";
+		}else{
+			return "redirect:/sessions/new";
+		}
+		
+		/*
 		Subject subject = SecurityUtils.getSubject();
 		user.setPassword(CryptographyUtil.md5(user.getPassword(), "hubble"));
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getEmail(), user.getPassword());
@@ -37,13 +45,12 @@ public class SessionController {
 			Session session = subject.getSession();
 			user = userService.findByEmail(user.getEmail());
 			session.setAttribute("userId", user.getId());
-			System.out.println("-------µÇÂ¼³É¹¦");
 			return "sessions/new";
 		} catch (Exception e) {
 			e.printStackTrace();
-			redirectAttributes.addFlashAttribute("errorMessage", "ÕËºÅÃÜÂë´íÎó");
-			System.out.println("-----µÇÂ¼Ê§°Ü");
+			redirectAttributes.addFlashAttribute("errorMessage", "è´¦å·å¯†ç é”™è¯¯");
 			return "redirect:/sessions/new";
 		}
+		*/
 	}
 }

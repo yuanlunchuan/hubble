@@ -64,7 +64,6 @@ public class ClientDebugController {
 	@RequestMapping(value="/{api}", method=RequestMethod.POST)
 	@ResponseBody
 	public String postInvoke(@PathVariable("api") String api, String token, String data){
-		System.out.println("------token: "+token);
 		System.out.println("------data: "+data);
 		UnRegisterAPI unRegisterAPI = unRegisterAPIService.findByApi(api);
 		unRegisterAPI.setInvokeCount(unRegisterAPI.getInvokeCount()+1);

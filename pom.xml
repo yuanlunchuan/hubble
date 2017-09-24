@@ -279,6 +279,13 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
+
+		<!-- hibernate.validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.1.Final</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>hubble</finalName>

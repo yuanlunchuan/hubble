@@ -1,19 +1,26 @@
 package com.hubble.controller;
 
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hubble.entiy.User;
 import com.hubble.service.IUserService;
+import com.hubble.util.CryptographyUtil;
 import com.hubble.util.SendMailHelper;
 
 @Controller
@@ -51,20 +58,16 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value = "/create", method = { RequestMethod.GET, RequestMethod.POST })
-	public String registerUsers(User user, Model model, HttpServletRequest request) {
-		System.out.println("registerUsers user : "+user);
-		
+	public String registerUsers(User user, Model model) {
 		User queryUser = userService.findByEmail(user.getEmail());
 		if (null != queryUser) {
 			System.out.println("该账号已注册，请直接登录");
 			return "redirect:/sessions/new";
 		}
-		user.setStatus(0);
 		Integer x =(int)((Math.random()*9+1)*10000); //随机生成5位验证码 
         String validateCode = x.toString(); 
+        user.setPassword(CryptographyUtil.md5(user.getPassword(), "hubble"));
 		user.setValidateCode(validateCode);
-		user.setRegisterTime(new Date());
-		user.setAlive(0);
 		userService.save(user);
 
 		StringBuffer msg = new StringBuffer("点击下面链接激活账号，48小时生效，否则重新注册账号，链接只能使用一次，请尽快激活！\n");
@@ -77,7 +80,6 @@ public class RegisterController {
 		msg.append(user.getValidateCode());
 
 		String ret = SendMailHelper.sendHtmlEmail("注册激活", msg, user.getEmail());
-		System.out.println("注册激活邮件发送结果：" + ret);
 
 		return "redirect:/sessions/new";
 	}

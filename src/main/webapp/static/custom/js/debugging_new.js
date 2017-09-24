@@ -5,7 +5,7 @@ $(function(){
 	// Initialize the editor
 	var editor = new JSONEditor(document.getElementById("editor_holder"),{
 	  schema: {
-	  	  "title": "response",  
+	  	  "title": "json编辑器",  
 	  	  type: "object",
 	      properties: {
 	      }
