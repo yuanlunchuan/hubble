@@ -3,7 +3,7 @@
 <%
 	String baseUrl = request.getContextPath();
 %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +17,12 @@
 	<%@include file="../client_shared/shared_css.jsp"%>
 	<%@include file="../client_shared/nav.jsp"%>
 	<div class="container content">
+	  <c:if test="${not empty errorMessage }">
+	    <div class="alert alert-info alert-dismissible" role="alert">
+	      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      <strong>温馨提示!</strong>${errorMessage }
+	    </div>
+	  </c:if>
 		<div class="row">
 			<div class="col-md-5 col-md-offset-3">
 				<form class="form-horizontal"

@@ -9,11 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Transient;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "i_users")
@@ -24,11 +26,13 @@ public class User implements Serializable {
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 
-	@Column(name = "email", nullable=false)
+	@Column(name = "email")
+	@NotEmpty(message = "邮箱不能为空")
+	@Email
 	private String email;
 
 	@Column(name = "password")
-	@NotNull(message = "基础数量不能为空")
+	@NotEmpty(message = "密码不能为空")
 	private String password;
 
 	@Column(name = "status")
