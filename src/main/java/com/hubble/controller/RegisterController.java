@@ -1,6 +1,5 @@
 package com.hubble.controller;
 
-import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +9,9 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hubble.entiy.User;
@@ -29,27 +28,18 @@ public class RegisterController {
 	ResourceBundle parmResource = ResourceBundle.getBundle("config");
 
 	@RequestMapping(value = "new", method = RequestMethod.GET)
-	public String newPage(HttpServletRequest request) {
-		String action = request.getParameter("action");
+	public String newPage(@RequestParam(value="action", required=false)String action,
+			@RequestParam(value="email", required=false)String email,
+			@RequestParam(value="validateCode", required=false)String validateCode) {
 
-		if ("activate".equals(action)) {
-			String email = request.getParameter("email");// 获取email
-			String validateCode = request.getParameter("validateCode");// 激活码
-			try {
-				if (userService.processActivate(email, validateCode)) {// 调用激活方法
-					return "redirect:/sessions/new";
-				} else {
-					System.out.println("registerUsers activate_failure");
-				}
-			} catch (ServiceException e) {
-				request.setAttribute("message", e.getMessage());
-			}
+		if ("activate".equals(action)&&userService.processActivate(email, validateCode)) {// 调用激活方法
+			return "redirect:/registUser/dashborad";
+		}else{
+			return "register/new";	
 		}
-
-		return "register/new";
 	}
 
-	@RequestMapping(value = "/create", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/create", method = {RequestMethod.POST })
 	public String registerUsers(@Valid User user, BindingResult result, RedirectAttributes model) {
 		StringBuilder errorMessage = new StringBuilder();
 		if (result.hasErrors()) {

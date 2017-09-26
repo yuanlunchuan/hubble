@@ -16,13 +16,13 @@ import com.hubble.entiy.User;
 import com.hubble.service.IUserService;
 
 public class RegisterRealm extends AuthorizingRealm{
-	//¼ÙÈç½«Õâ¸ö×¢ÊÍÈ¥µô»á±¨´í£¬Ï£ÍûÊ¹ÓÃµ½×Ô¶¯×¢ÈëµÄÌØĞÔ£¬ÆäËûÏîÄ¿Ò²ÊÇÕâÑùĞ´µÄ£¬Î¨Ò»µÄ²»ÓÃÔÚÓÚÆäËûÏîÄ¿
-	//dao²ãÊ¹ÓÃµÄÊÇmybatis£¬±¾ÏîÄ¿Ê¹ÓÃµÄÊÇspring data jpaÊµÏÖµÄ
-	//@Autowired
+	//å‡å¦‚å°†è¿™ä¸ªæ³¨é‡Šå»æ‰ä¼šæŠ¥é”™ï¼Œå¸Œæœ›ä½¿ç”¨åˆ°è‡ªåŠ¨æ³¨å…¥çš„ç‰¹æ€§ï¼Œå…¶ä»–é¡¹ç›®ä¹Ÿæ˜¯è¿™æ ·å†™çš„ï¼Œå”¯ä¸€çš„ä¸ç”¨åœ¨äºå…¶ä»–é¡¹ç›®
+	//daoå±‚ä½¿ç”¨çš„æ˜¯mybatisï¼Œæœ¬é¡¹ç›®ä½¿ç”¨çš„æ˜¯spring data jpaå®ç°çš„
+	@Autowired
 	private IUserService userService;
 
 	/**
-	 * È¨ÏŞ²¿·Ö´úÂë
+	 * æƒé™éƒ¨åˆ†ä»£ç 
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
