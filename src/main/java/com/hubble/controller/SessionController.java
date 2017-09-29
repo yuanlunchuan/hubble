@@ -1,5 +1,7 @@
 package com.hubble.controller;
 
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -21,6 +23,7 @@ import com.hubble.util.CryptographyUtil;
 public class SessionController {
 	@Autowired
 	private IUserService userService;
+	ResourceBundle config = ResourceBundle.getBundle("config");
 
 	@RequestMapping(value="/new", method=RequestMethod.GET)
 	public String newPage(){
@@ -29,28 +32,27 @@ public class SessionController {
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String login(User user, HttpServletRequest request, RedirectAttributes redirectAttributes) {
-		User dbUser = userService.findByEmail(user.getEmail());
-		if(null!=dbUser&&CryptographyUtil.md5(user.getPassword(), "hubble").equals(dbUser.getPassword())){
-			return "redirect:/registUser/dashborad";
-		}else{
-			return "redirect:/sessions/new";
-		}
-		
-		/*
 		Subject subject = SecurityUtils.getSubject();
-		user.setPassword(CryptographyUtil.md5(user.getPassword(), "hubble"));
+		user.setPassword(CryptographyUtil.md5(user.getPassword(), config.getString("md5salt")));
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getEmail(), user.getPassword());
 		try {
 			subject.login(token);
 			Session session = subject.getSession();
 			user = userService.findByEmail(user.getEmail());
 			session.setAttribute("userId", user.getId());
-			return "sessions/new";
+			return "redirect:/registUser/dashborad";
 		} catch (Exception e) {
-			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("errorMessage", "账号密码错误");
 			return "redirect:/sessions/new";
 		}
-		*/
+	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logOut(){
+	    Subject subject = SecurityUtils.getSubject();  
+	    if (subject.isAuthenticated()) {  
+	        subject.logout();
+	    }  
+		return "redirect:/";
 	}
 }

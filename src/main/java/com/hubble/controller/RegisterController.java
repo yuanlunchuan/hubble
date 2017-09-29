@@ -2,10 +2,8 @@ package com.hubble.controller;
 
 import java.util.ResourceBundle;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -57,7 +55,7 @@ public class RegisterController {
 
 		Integer x = (int) ((Math.random() * 9 + 1) * 10000); // 随机生成5位验证码
 		String validateCode = x.toString();
-		user.setPassword(CryptographyUtil.md5(user.getPassword(), "hubble"));
+		user.setPassword(CryptographyUtil.md5(user.getPassword(), parmResource.getString("md5salt")));
 		user.setValidateCode(validateCode);
 		userService.save(user);
 

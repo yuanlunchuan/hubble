@@ -2,6 +2,7 @@ package com.hubble.util;
 
 import java.util.Date;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import javax.mail.internet.MimeMessage;
 
@@ -54,8 +55,11 @@ public class SendMailHelper {
 	
 	public static String sendHtmlEmail(String subject, StringBuffer msg, String sendTo) {
 		try {
-			// final String username = user;
-			// final String pass = pw;
+			ResourceBundle parmResource = ResourceBundle.getBundle("config");
+			//测试状态下不用发送邮件
+			if("dev".equals(parmResource.getString("env"))){
+				return "";
+			}
 			// 需要认证
 			Properties props = new Properties();
 			props.put("mail.smtp.host", HOST);

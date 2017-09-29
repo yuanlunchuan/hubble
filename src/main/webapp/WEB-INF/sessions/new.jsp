@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String baseUrl = request.getContextPath(); %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +15,12 @@
  
  <div class="container-fluid content">
    <div class="row">
+	  <c:if test="${not empty errorMessage }">
+	    <div class="alert alert-info alert-dismissible" role="alert">
+	      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      <strong>温馨提示!</strong>${errorMessage }
+	    </div>
+	   </c:if>
      <div class="col-md-4 col-md-offset-4">
        <div class="dailog-container">
 		<form class="form-horizontal login-form" action="${pageContext.request.contextPath}/sessions" method="POST">

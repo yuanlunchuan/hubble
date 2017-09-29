@@ -33,7 +33,7 @@
 			<ul>
 				<li>
 					<img src="${pageContext.request.contextPath}/static/registUser/image/huiyuan1.png" alt="">
-					<a href="login.html">退出</a>
+					<a href="${pageContext.request.contextPath}/sessions/logout">退出</a>
 				</li>
 				<li>
 					<img src="${pageContext.request.contextPath}/static/registUser/image/huiyuan1.png" alt="">

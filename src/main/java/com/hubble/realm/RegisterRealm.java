@@ -1,6 +1,7 @@
 package com.hubble.realm;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -11,16 +12,15 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.hubble.entiy.User;
 import com.hubble.service.IUserService;
 
+@Component
 public class RegisterRealm extends AuthorizingRealm{
-	//假如将这个注释去掉会报错，希望使用到自动注入的特性，其他项目也是这样写的，唯一的不用在于其他项目
-	//dao层使用的是mybatis，本项目使用的是spring data jpa实现的
 	@Autowired
 	private IUserService userService;
-
 	/**
 	 * 权限部分代码
 	 */
