@@ -82,7 +82,6 @@
  
  <%@include file="../client_shared/_footer.jsp" %>
  <%@include file="../client_shared/js.jsp" %>
- <script src="${pageContext.request.contextPath}/static/lib/jsoneditor/jsoneditor.min.js"></script>
  <script src="${pageContext.request.contextPath}/static/custom/js/debugging_new.js"></script>
 </body>
 </html>
