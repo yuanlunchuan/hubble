@@ -25,7 +25,7 @@ public class ProjectController {
 
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String index(@RequestParam(value="pageNumber", required=false, defaultValue ="1") Integer pageNumber,
-			@RequestParam(value="pageNumber", required=false, defaultValue="10") Integer pageSize,
+			@RequestParam(value="pageSize", required=false, defaultValue="10") Integer pageSize,
 			ModelMap model){
 		Enquiry enquiry = new Enquiry();
 		enquiry.setPageNumber(pageNumber);
