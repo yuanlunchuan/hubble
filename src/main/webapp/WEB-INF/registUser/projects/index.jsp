@@ -167,30 +167,24 @@
         <h4 class="modal-title" id="myModalLabel">新增项目</h4>
       </div>
       <div class="modal-body">
-		<form class="form-horizontal">
+		<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/registUser/projects">
 		  <div class="form-group">
 		    <label class="col-md-2 control-label">项目名称</label>
 		    <div class="col-md-10">
-		      <input type="text" class="form-control">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label class="col-md-2 control-label">项目简介</label>
-		    <div class="col-md-10">
-		      <input type="password" class="form-control">
+		      <input type="text" class="form-control" name="name">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label class="col-md-2 control-label">项目描述</label>
 		    <div class="col-md-10">
-		      <textarea type="password" class="form-control" rows="5"></textarea>
+		      <textarea class="form-control" rows="5" name="introduce"></textarea>
 		    </div>
 		  </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button type="submit" class="btn btn-primary">保存</button>
+	      </div>
 		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary">保存</button>
       </div>
     </div>
   </div>
