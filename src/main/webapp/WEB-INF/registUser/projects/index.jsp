@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,102 +40,14 @@
    </div>
    <div class="line"></div>
    <div class="row project-row">
+    <c:forEach var="project" items="${collection.content}" varStatus="status">
      <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project1.jpg" class="img-responsive">
-         <h4 class="text-center">云账房管理系统</h4>
+       <a href="${pageContext.request.contextPath}/registUser/projects/${project.id}">
+         <img alt="" src="${pageContext.request.contextPath}/${project.imgUrl}" class="img-responsive">
+         <h4 class="text-center">${project.name}</h4>
        </a>
      </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project2.jpg" class="img-responsive">
-         <h4 class="text-center">店里客O2O</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project3.jpg" class="img-responsive">
-         <h4 class="text-center">快递抢单系统</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project4.jpg" class="img-responsive">
-         <h4 class="text-center">yonex嘉宾签到</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project5.jpg" class="img-responsive">
-         <h4 class="text-center">aud官网建设</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project6.jpg" class="img-responsive">
-         <h4 class="text-center">快便当送餐平台</h4>
-       </a>
-     </div>
-   </div>
-
-   <div class="row project-row">
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project7.jpg" class="img-responsive">
-         <h4 class="text-center">微信摇一摇</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project8.jpg" class="img-responsive">
-         <h4 class="text-center">师傅到家系统</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project9.jpg" class="img-responsive">
-         <h4 class="text-center">搜附近的人</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project10.jpg" class="img-responsive">
-         <h4 class="text-center">微信摇一摇</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project11.jpg" class="img-responsive">
-         <h4 class="text-center">师傅到家系统</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project12.jpg" class="img-responsive">
-         <h4 class="text-center">搜附近的人</h4>
-       </a>
-     </div>
-   </div>
-   
-   <div class="row project-row">
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project13.jpg" class="img-responsive">
-         <h4 class="text-center">微信摇一摇</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project14.jpg" class="img-responsive">
-         <h4 class="text-center">师傅到家系统</h4>
-       </a>
-     </div>
-     <div class="col-md-2">
-       <a href="${pageContext.request.contextPath}/registUser/projects/1">
-         <img alt="" src="${pageContext.request.contextPath}/static/registUser/image/project15.jpg" class="img-responsive">
-         <h4 class="text-center">搜附近的人</h4>
-       </a>
-     </div>
+     </c:forEach>
    </div>
    
 	<nav aria-label="Page navigation">

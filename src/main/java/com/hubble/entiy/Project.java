@@ -39,6 +39,22 @@ public class Project implements Serializable {
 	@Column(name="introduce")
 	private String introduce;
 
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public String getIntroduce() {
+		return introduce;
+	}
+
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
+
 	public String getId() {
 		return id;
 	}

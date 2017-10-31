@@ -5,9 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hubble.entiy.Project;
 import com.hubble.service.IProjectService;
+import com.hubble.util.Enquiry;
 
 @Controller
 @RequestMapping("/registUser/projects")
@@ -22,7 +24,14 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value="", method=RequestMethod.GET)
-	public String index(){
+	public String index(@RequestParam(value="pageNumber", required=false, defaultValue ="1") Integer pageNumber,
+			@RequestParam(value="pageNumber", required=false, defaultValue="10") Integer pageSize,
+			ModelMap model){
+		Enquiry enquiry = new Enquiry();
+		enquiry.setPageNumber(pageNumber);
+		enquiry.setPageSize(pageSize);
+		model.addAttribute("collection", projectService.getProjectsByEnquiry(enquiry));
+
 		return "registUser/projects/index";
 	}
 	
