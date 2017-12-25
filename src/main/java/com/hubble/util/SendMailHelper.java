@@ -2,7 +2,6 @@ package com.hubble.util;
 
 import java.util.Date;
 import java.util.Properties;
-import java.util.ResourceBundle;
 
 import javax.mail.internet.MimeMessage;
 
@@ -11,18 +10,15 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 
 public class SendMailHelper {
 
-	private final static String FROM_MAIL = "13618040334@163.com";
-	private final static String FROM_USER_NAME = "13618040334@163.com";
-	private final static String MAIL_PASSWORD = "M51819931201";
-	private final static String FROM_USER_NICK_NAME = "Hongdong";// 发送者名字
+	private final static String FROM_MAIL = "13551031965@163.com";
+	private final static String FROM_USER_NAME = "13551031965@163.com";
+	private final static String MAIL_PASSWORD = "5yuanlunchuan";
+	private final static String FROM_USER_NICK_NAME = "yuanlunchuan";// 发送者名字
 	private final static String PROTOCOL = "smtp";// 协议
 	private final static String HOST = "smtp.163.com";// 发送主机
-	private final static String PORT = "25";// 端口
 
 	public static String Sender(String subject, String msg, String sendTo) {
 		try {
-			// final String username = user;
-			// final String pass = pw;
 			// 需要认证
 			Properties props = new Properties();
 			props.put("mail.smtp.host", HOST);
@@ -55,11 +51,6 @@ public class SendMailHelper {
 	
 	public static String sendHtmlEmail(String subject, StringBuffer msg, String sendTo) {
 		try {
-			ResourceBundle parmResource = ResourceBundle.getBundle("config");
-			//测试状态下不用发送邮件
-			if("dev".equals(parmResource.getString("env"))){
-				return "";
-			}
 			// 需要认证
 			Properties props = new Properties();
 			props.put("mail.smtp.host", HOST);
