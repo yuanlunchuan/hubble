@@ -12,6 +12,12 @@
  <%@include file="../regist_user_shared/css.jsp" %>
  <%@include file="../regist_user_shared/nav.jsp" %>
  
+ <div class="container" style="height: 500px;">
+   <div class="row">
+     <div class="col-md-12">这是设置页面</div>
+   </div>
+ </div>
+ 
  <%@include file="../regist_user_shared/footer.jsp" %>
  <%@include file="../regist_user_shared/js.jsp" %>
 </body>

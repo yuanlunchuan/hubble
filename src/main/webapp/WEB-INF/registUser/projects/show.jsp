@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,7 +135,8 @@
              <td>订单列表</td>
              <td>GET请求</td>
              <td>获取订单列表</td>
-             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>/<a href="">删除</a></td>
+             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>
+             /<a href="">删除</a></td>
            </tr>
            <tr>
              <td>2</td>
@@ -162,22 +164,24 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">新增成员</h4>
       </div>
       <div class="modal-body">
-		<form class="form-horizontal">
+		<form class="form-horizontal" method="post" action="<c:url value='/registUser/projects'/>/${projectId}">
 		  <div class="form-group">
-		    <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+		    <label class="col-md-2 control-label">Email</label>
 		    <div class="col-md-10">
-		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		      <input type="email" class="form-control" name="email" placeholder="Email">
 		    </div>
 		  </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button type="submit" class="btn btn-primary">新增</button>
+	      </div>
 		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary">新增</button>
       </div>
     </div>
   </div>

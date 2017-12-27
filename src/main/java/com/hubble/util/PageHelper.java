@@ -15,6 +15,24 @@ public class PageHelper<T> implements Serializable {
 	private List<T> content = new ArrayList<T>();
 	private long total;// 总条数
 	private long totalPage;// 总页数
+	private long currentPage;//当前页数
+	private long pageSize;//页数大小
+
+	public long getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public long getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(long currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public PageHelper() {
 		super();

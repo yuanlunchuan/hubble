@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="header">
 	<div class="headerinner">
 		<ul class="headernav">
@@ -10,8 +10,8 @@
 			<li><a href="${pageContext.request.contextPath}/registUser/dashborad">首页</a></li>
 			<li class="hidden"><a href="${pageContext.request.contextPath}/registUser/teams" >团队管理</a></li>
 			<li><a href="${pageContext.request.contextPath}/registUser/projects">项目管理</a></li>
-			<li><a href="#" >邮件通知设置</a></li>
-			<li><a href="#" >个人设置</a></li>
+			<li><a href="<c:url value='/registUser/mails' />" >邮件通知设置</a></li>
+			<li><a href="<c:url value='/registUser/settings'/>">个人设置</a></li>
 			<li class="search">
 				<a class="search_pic"></a>
 			</li>

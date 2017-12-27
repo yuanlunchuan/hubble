@@ -72,6 +72,8 @@ public class ProjectServiceImpl implements IProjectService {
 		result.setContent(page.getContent());
 		result.setTotal(page.getTotalElements());
 		result.setTotalPage(page.getTotalPages());
+		result.setCurrentPage(enquiry.getPageNumber());
+		result.setPageSize(enquiry.getPageSize());
 
 		return result;
 	}

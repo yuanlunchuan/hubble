@@ -53,15 +53,15 @@
 	<nav aria-label="Page navigation">
 	  <ul class="pagination">
 	    <li>
-	      <a href="#" aria-label="Previous">
-	        <span aria-hidden="true">&laquo;</span>
+	      <a href="${pageContext.request.contextPath}/registUser/projects?pageSize=${collection.pageSize}&pageNumber=${collection.currentPage==1?1:(collection.currentPage-1)}" aria-label="Previous">
+	          <span aria-hidden="true">&laquo;</span>
 	      </a>
 	    </li>
 		<c:forEach var="i" begin="1" end="${collection.totalPage}">
-     	  <li><a href="${pageContext.request.contextPath}/registUser/projects?pageSize=10&pageNumber=${i}">${i}</a></li>    
+     	  <li><a href="${pageContext.request.contextPath}/registUser/projects?pageSize=${collection.pageSize}&pageNumber=${i}">${i}</a></li>    
 		</c:forEach>
 	    <li>
-	      <a href="#" aria-label="Next">
+	      <a href="${pageContext.request.contextPath}/registUser/projects?pageSize=${collection.pageSize}&pageNumber=${collection.currentPage==collection.totalPage?collection.totalPage:(collection.currentPage+1)}" aria-label="Next">
 	        <span aria-hidden="true">&raquo;</span>
 	      </a>
 	    </li>
