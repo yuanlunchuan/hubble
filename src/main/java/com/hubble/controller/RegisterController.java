@@ -55,7 +55,7 @@ public class RegisterController {
 
 		Integer x = (int) ((Math.random() * 9 + 1) * 10000); // 随机生成5位验证码
 		String validateCode = x.toString();
-		user.setPassword(CryptographyUtil.md5(user.getPassword(), parmResource.getString("md5salt")));
+		user.setPassword(user.getPassword());
 		user.setValidateCode(validateCode);
 		userService.save(user);
 
