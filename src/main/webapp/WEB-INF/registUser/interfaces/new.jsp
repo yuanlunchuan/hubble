@@ -27,5 +27,6 @@
  </div>
  <%@include file="../regist_user_shared/footer.jsp" %>
  <%@include file="../regist_user_shared/js.jsp" %>
+ <script src="${pageContext.request.contextPath}/static/registUser/js/interface_new.js"></script>
 </body>
 </html>

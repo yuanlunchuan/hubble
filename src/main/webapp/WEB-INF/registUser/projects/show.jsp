@@ -136,21 +136,32 @@
              <td>GET请求</td>
              <td>获取订单列表</td>
              <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>
-             /<a href="">删除</a></td>
+             /<a href="">删除</a>
+             /<a href="">查看响应数据</a>
+             /<a href="">查看详情</a>
+             </td>
            </tr>
            <tr>
              <td>2</td>
              <td>订单详情</td>
              <td>GET请求</td>
              <td>获取订单详情数据</td>
-             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>/<a href="">删除</a></td>
+             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>
+             /<a href="">删除</a>
+             /<a href="">查看响应数据</a>
+             /<a href="">查看详情</a>
+             </td>
            </tr>
            <tr>
              <td>3</td>
              <td>删除用户</td>
              <td>Delete请求</td>
              <td>删除数据</td>
-             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>/<a href="">删除</a></td>
+             <td><a href="${pageContext.request.contextPath}/registUser/interfaces/123/edit">编辑</a>
+             /<a href="">删除</a>
+             /<a href="">查看响应数据</a>
+             /<a href="">查看详情</a>
+             </td>
            </tr>
          </table>
        </div>

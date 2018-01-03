@@ -12,28 +12,40 @@
  <%@include file="../regist_user_shared/css.jsp" %>
  <%@include file="../regist_user_shared/nav.jsp" %>
  
- <div class="container" style="height: 500px;">
+ <div class="container" style="height: 500px; margin-top: 50px;">
    <div class="row">
-     <div class="col-md-4">
-		<form>
-		  <div class="checkbox">
-		    <label><input type="checkbox">新人加入通知</label>
-		  </div>
-		  <div class="checkbox">
-		    <label><input type="checkbox">加入项目通知</label>
-		  </div>
-		  <div class="checkbox">
-		    <label><input type="checkbox">被踢出项目通知</label>
-		  </div>
-		  <div class="checkbox">
-		    <label><input type="checkbox">对项目api修改通知</label>
-		  </div>
-		  <div class="checkbox">
-		    <label><input type="checkbox">接收api修改通知</label>
-		  </div>
-		  <button type="submit" class="btn btn-default">提交</button>
-		</form>
-     </div>
+   	 <form>
+        <div class="col-md-10 col-md-offset-1">
+          <table style="width: 100%;">
+            <tr>
+              <td></td>
+              <td>系统通知</td>
+              <td>邮件通知</td>
+            </tr>
+            <tr>
+              <td>新人加入通知</td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>加入项目通知</td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>被踢出项目通知</td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>对项目api修改通知</td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+          </table>
+		  <button type="submit" class="btn btn-default" style="margin-top: 50px;">提交</button>
+		</div>
+	  </form>
    </div>
  </div>
  
