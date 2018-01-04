@@ -11,10 +11,10 @@
   <link href="${pageContext.request.contextPath}/static/custom/css/debugging_index.css" rel="stylesheet">
 </head>
 <body>
- <%@include file="../client_shared/shared_css.jsp" %>
- <%@include file="../client_shared/nav.jsp" %>
+  <c:import url="../client_shared/shared_css.jsp" />
+  <c:import url="../client_shared/nav.jsp" />
  
- <%@include file="../client_shared/_footer.jsp" %>
- <%@include file="../client_shared/js.jsp" %>
+ <c:import url="../client_shared/_footer.jsp" />
+ <c:import url="../client_shared/js.jsp" />
 </body>
 </html>

@@ -26,12 +26,24 @@ public class MessageController {
 	public String show(@PathVariable("id") String id){
 		return "admin/messages/show";
 	}
+	
+	@RequestMapping(value="/{id}/edit", method = RequestMethod.GET)
+	public String edit(@PathVariable("id") String id, ModelMap model){
+		model.addAttribute("message", messageService.get(id));
+		return "admin/messages/edit";
+	}
+
+	@RequestMapping(value="", method = RequestMethod.PUT)
+	public String update(Message message){
+		messageService.save(message);
+		return "redirect:/admin/messages";
+	}
 
 	@RequestMapping(value="/new", method = RequestMethod.GET)
 	public String newPage(){
 		return "admin/messages/new";
 	}
-	
+
 	@RequestMapping(value="", method = RequestMethod.POST)
 	public String create(Message message){
 		messageService.save(message);

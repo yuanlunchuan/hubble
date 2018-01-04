@@ -10,10 +10,10 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<%@include file="../admin_shared/css.jsp"%>
+<c:import url="../admin_shared/css.jsp"></c:import>
 <div class="wrapper">
-  <%@include file="../admin_shared/header.jsp"%>
-  <%@include file="../admin_shared/left_aside.jsp"%>
+  <c:import url="../admin_shared/header.jsp"></c:import>
+  <c:import url="../admin_shared/left_aside.jsp" />
 
   <div class="content-wrapper">
     <section class="content-header">
@@ -39,9 +39,9 @@
     <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
 
-  <%@include file="../admin_shared/control_aside.jsp"%>
+  <c:import url="../admin_shared/control_aside.jsp" />
   <div class="control-sidebar-bg"></div>
 </div>
-<%@include file="../admin_shared/js.jsp"%>
+<c:import url="../admin_shared/js.jsp" />
 </body>
 </html>

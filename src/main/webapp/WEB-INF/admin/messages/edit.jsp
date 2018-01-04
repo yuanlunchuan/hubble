@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-md-12">
           <c:import url="_form.jsp">
-            <c:param name="method" value="post"/>
+            <c:param name="method" value="PUT"/>
             <c:param name="url">
               <c:url value='/admin/messages'/>
             </c:param>

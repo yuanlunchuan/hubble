@@ -33,9 +33,14 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">消息列表</h3>
-              <div class="box-tools pull-right">
-                <a href="<c:url value='/admin/messages/new'/>" class="btn btn-box-tool"><i class="fa fa-plus"></i></a>
-                <button type="button" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
+              <div class="box-tools">
+                <a href="<c:url value='/admin/messages/new'/>" class="btn btn-box-tool pull-right"><i class="fa fa-plus"></i></a>
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="关键字...">
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
               </div>
             </div>
           <table class="table table-hover">
@@ -43,12 +48,17 @@
               <td>id</td>
               <td>标题</td>
               <td>内容</td>
+              <td>操作</td>
             </tr>
             <c:forEach var="message" items="${messages}">
               <tr>
                 <td>${message.id}</td>
                 <td>${message.title}</td>
                 <td>${message.content}</td>
+                <td>
+                  <a href="<c:url value='/admin/messages/${message.id}/edit'/>" class="btn btn-primary"><i class="fa fa-edit"></i>编辑</a>
+                  <a href="" class="btn btn-danger"><i class="fa fa-remove"></i>删除</a>
+                </td>
               </tr>
             </c:forEach>
           </table>
