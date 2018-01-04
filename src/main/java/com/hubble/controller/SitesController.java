@@ -11,7 +11,6 @@ public class SitesController {
 
 	@RequestMapping(value={"", "/", "home"})
 	public String home(){
-		logger.info("-----------------shouye-------");
 		return "sites/sites";
 	}
 }

@@ -1,9 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- https://adminlte.io/themes/AdminLTE/index2.html -->
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
-
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
-
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
@@ -31,9 +32,11 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
       <li class="header">HEADER</li>
-      <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+      <li class="active">
+        <a href="#"><i class="fa fa-link"></i><span>注册用户</span></a>
+      </li>
+      <li><a href="#"><i class="fa fa-link"></i><span>项目查看</span></a></li>
+      <li><a href="<c:url value='/admin/messages'/>"><i class="fa fa-link"></i><span>消息管理</span></a></li>
       <li class="treeview">
         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
           <span class="pull-right-container">
