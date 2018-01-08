@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -27,9 +29,11 @@ public class Message implements Serializable {
 	@Column(name="content", nullable=false, length=1000)
 	private String content;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name="created_at")
 	private Date createdAt=new Date();
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name="updated_at")
 	private Date updatedAt;
 	

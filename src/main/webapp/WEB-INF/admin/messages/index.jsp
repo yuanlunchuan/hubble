@@ -35,12 +35,12 @@
               <h3 class="box-title">消息列表</h3>
               <div class="box-tools">
                 <a href="<c:url value='/admin/messages/new'/>" class="btn btn-box-tool pull-right"><i class="fa fa-plus"></i></a>
-                <div class="input-group input-group-sm" style="width: 150px;">
+                <!-- <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" name="table_search" class="form-control pull-right" placeholder="关键字...">
                   <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           <table class="table table-hover">
@@ -50,9 +50,9 @@
               <td>内容</td>
               <td>操作</td>
             </tr>
-            <c:forEach var="message" items="${messages}">
+            <c:forEach var="message" items="${messages}" varStatus="status">
               <tr>
-                <td>${message.id}</td>
+                <td>${status.index+1}</td>
                 <td>${message.title}</td>
                 <td>${message.content}</td>
                 <td>

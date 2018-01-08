@@ -78,46 +78,23 @@
                 <td>已读</td>
                 <td>操作</td>
               </tr>
-		      <tr>
-                <td>1</td>
-                <td>关于网站升级..</td>
-                <td>系统</td>
-                <td>2018-3-2</td>
-                <td><span class="label label-default">已读</span></td>
-                <td><button class="btn btn-xs btn-danger">删除</button></td>
-              </tr>
-		      <tr>
-                <td>2</td>
-                <td>请快速加入接口..</td>
-                <td>张三</td>
-                <td>2017-3-08</td>
-                <td><span class="label label-info">未读</span></td>
-                <td><button class="btn btn-xs btn-danger">删除</button></td>
-              </tr>
-		      <tr>
-                <td>3</td>
-                <td>新功能已完成开发</td>
-                <td>王二</td>
-                <td>2018-7-12</td>
-                <td><span class="label label-default">已读</span></td>
-                <td><button class="btn btn-xs btn-danger">删除</button></td>
-              </tr>
-		      <tr>
-                <td>4</td>
-                <td>需求已发至王经理..</td>
-                <td>王妃</td>
-                <td>2018-5-4</td>
-                <td><span class="label label-default">已读</span></td>
-                <td><button class="btn btn-xs btn-danger">删除</button></td>
-              </tr>
-		      <tr>
-                <td>5</td>
-                <td>接口文档待存在缺陷</td>
-                <td>刘二</td>
-                <td>2017-5-9</td>
-                <td><span class="label label-info">未读</span></td>
-                <td><button class="btn btn-xs btn-danger">删除</button></td>
-              </tr>
+              <c:forEach var="message" items="${messages.content}" varStatus="status">
+		        <tr>
+                  <td>${status.index+1}</td>
+                  <td>${message.title }</td>
+                  <td>系统</td>
+                  <td>${message.createdAt}</td>
+                  <td>
+                  <c:if test="${message.readed}">
+                    <span class="label label-default">已读</span>
+                  </c:if>
+                  <c:if test="${!message.readed}">
+                    <span class="label label-info">未读</span>
+                  </c:if>
+                  </td>
+                  <td><button class="btn btn-xs btn-danger">删除</button></td>
+                </tr>
+              </c:forEach>
             </table>
             <div class="text-right">
 			  <nav aria-label="Page navigation">

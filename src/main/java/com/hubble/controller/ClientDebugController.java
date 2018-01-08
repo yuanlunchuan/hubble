@@ -1,9 +1,5 @@
 package com.hubble.controller;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +60,6 @@ public class ClientDebugController {
 	@RequestMapping(value="/{api}", method=RequestMethod.POST)
 	@ResponseBody
 	public String postInvoke(@PathVariable("api") String api, String token, String data){
-		System.out.println("------data: "+data);
 		UnRegisterAPI unRegisterAPI = unRegisterAPIService.findByApi(api);
 		unRegisterAPI.setInvokeCount(unRegisterAPI.getInvokeCount()+1);
 		unRegisterAPIService.save(unRegisterAPI);
