@@ -36,7 +36,6 @@ public class ContactUsController {
 		String sendTo = contactInfo.getEmail();// 接收者邮件
 		String msg = contactInfo.getContent(); // 发送内容
 		String ret = SendMailHelper.Sender(subject, msg, sendTo);
-		System.out.println("邮件发送结果：" + ret);
 
 		return "redirect:/contactUs/new";
 	}

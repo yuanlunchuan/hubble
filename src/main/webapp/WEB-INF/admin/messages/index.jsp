@@ -45,7 +45,7 @@
             </div>
           <table class="table table-hover">
             <tr>
-              <td>id</td>
+              <td>#</td>
               <td>标题</td>
               <td>内容</td>
               <td>操作</td>

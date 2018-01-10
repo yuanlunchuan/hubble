@@ -19,6 +19,9 @@ public class SendMailHelper {
 
 	public static String Sender(String subject, String msg, String sendTo) {
 		try {
+			if(true){
+				return "";
+			}
 			// 需要认证
 			Properties props = new Properties();
 			props.put("mail.smtp.host", HOST);

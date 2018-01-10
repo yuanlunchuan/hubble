@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -15,7 +17,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "i_contact_info")
+@Table(name = "contact_info")
 public class ContactInfo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -35,17 +37,19 @@ public class ContactInfo implements Serializable {
 	private String phonenum;
 
 	@NotEmpty(message = "主题不能为空")
-	@Column(name = "subject")
+	@Column(name = "subject", length=100)
 	private String subject;
 
 	@NotEmpty(message = "内容不能为空")
-	@Column(name = "content")
+	@Column(name = "content", length=1000)
 	private String content;
 
-	@Column(name = "createdAt")
+	@Column(name = "created_at")
+	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 
-	@Column(name = "updatedAt")
+	@Column(name = "updated_at")
+	@Temporal(TemporalType.DATE)
 	private Date updatedAt;
 
 	@Column(name = "alive")

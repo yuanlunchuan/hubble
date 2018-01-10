@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String baseUrl = request.getContextPath(); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,9 @@
        <p class="desc">专注接口管理，灵活的配置，快速访问</p>
      </div>
      <div class="col-md-12 text-center">
-       <button class="praise-button">为我点赞</button>
+       <form action="<c:url value='/aboutUs/praise'/>" method="post">
+         <button type="submit" class="praise-button">为我点赞</button>
+       </form>
      </div>
    </div>
 
