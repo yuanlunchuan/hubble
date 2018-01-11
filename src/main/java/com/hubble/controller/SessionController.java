@@ -32,7 +32,7 @@ public class SessionController {
         try {
             subject.login(token);
             Session session = subject.getSession();
-            user = userService.findByEmail(user.getEmail());
+            user = userService.findByEmail(user.getEmail()).get();
             session.setAttribute("userId", user.getId());
             return "redirect:/registUser/dashborad";
         } catch (Exception e) {

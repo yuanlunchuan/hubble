@@ -3,7 +3,8 @@
 	<div class="panel panel-default">
 	  <div class="panel-heading">请求参数录入</div>
 	  <div class="panel-body">
-		<form action="${pageContext.request.contextPath}/clientDebuging" method="post" class="form-horizontal">
+		<form action="${pageContext.request.contextPath}/registUser/projects/${projectId}/interfaces" method="post" class="form-horizontal">
+		  <input type="hidden" name="projectId" value="${projectId}">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">接口名称</label>
 		    <div class="col-sm-10">

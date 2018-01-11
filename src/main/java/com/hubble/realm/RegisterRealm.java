@@ -1,5 +1,7 @@
 package com.hubble.realm;
 
+import java.util.function.Function;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -30,12 +32,17 @@ public class RegisterRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String email = (String) token.getPrincipal();
-		User user = userService.findByEmail(email);
-		if (null != user) {
-			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getEmail(), user.getPassword(), "xx");
-			return authcInfo;
-		} else {
-			return null;
-		}
+		User user = userService.findByEmail(email).get();
+
+		Function<User, AuthenticationInfo> fundation = (x) -> {
+			if (null != user) {
+				AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getEmail(), user.getPassword(), "xx");
+				return authcInfo;
+			} else {
+				return null;
+			}
+		};
+
+		return fundation.apply(user);
 	}
 }

@@ -46,7 +46,7 @@ public class RegisterController {
 			return "redirect:/register/new";
 		}
 
-		User queryUser = userService.findByEmail(user.getEmail());
+		User queryUser = userService.findByEmail(user.getEmail()).get();
 		if (null != queryUser) {
 			errorMessage.append("该账号已注册，请直接登录");
 			model.addFlashAttribute("errorMessage", errorMessage.toString());

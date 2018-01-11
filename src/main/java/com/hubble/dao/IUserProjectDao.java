@@ -7,4 +7,6 @@ import com.hubble.entiy.UserProject;
 
 public interface IUserProjectDao extends JpaRepository<UserProject, String>, JpaSpecificationExecutor<UserProject> {
 
+	UserProject findByUserIdAndProjectId(String userId, String projectId);
+
 }

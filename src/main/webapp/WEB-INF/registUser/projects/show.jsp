@@ -114,7 +114,7 @@
            </div>
          </div>
        <div class="col-md-7 text-right">
-         <a type="button" class="btn btn-info" href="${pageContext.request.contextPath}/registUser/interfaces/new">
+         <a type="button" class="btn btn-info" href="${pageContext.request.contextPath}/registUser/projects/${projectId}/interfaces/new">
                            新增接口
          </a>
        </div>

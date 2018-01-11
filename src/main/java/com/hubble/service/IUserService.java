@@ -1,6 +1,7 @@
 package com.hubble.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.hubble.entiy.User;
 import com.hubble.util.Enquiry;
@@ -21,7 +22,7 @@ public interface IUserService {
 	
 	List<User> getUsersBySql(String userName);
 
-	User findByEmail(String email);
+	Optional<User> findByEmail(String email);
 
 	boolean processActivate(String email, String validateCode);
 }

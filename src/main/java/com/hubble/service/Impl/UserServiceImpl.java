@@ -3,6 +3,7 @@ package com.hubble.service.Impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.annotation.Resource;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -96,16 +97,15 @@ public class UserServiceImpl implements IUserService {
 		return userDao.getUsersBySql(userName);
 	}
 
-	public User findByEmail(String email) {
-		return userDao.findByEmail(email);
+	public Optional<User> findByEmail(String email) {
+		return  Optional.ofNullable(userDao.findByEmail(email));
 	}
 
 	public boolean processActivate(String email, String validateCode) {
 		try {
 			// 数据访问层，通过email获取用户信息
-			User user = findByEmail(email);
-			// 验证用户是否存在
-			if (user != null) {
+			Optional<User> userOpt = findByEmail(email);
+			userOpt.ifPresent((user)->{
 				// 验证用户激活状态
 				if (user.getStatus() == 0) {
 					// 没激活
@@ -118,7 +118,6 @@ public class UserServiceImpl implements IUserService {
 							// 激活成功， 并更新用户的激活状态，为已激活
 							user.setStatus(1);// 把状态改为激活
 							userDao.save(user);
-							return true;
 						} else {
 							System.out.println("激活码不正确");
 						}
@@ -126,12 +125,8 @@ public class UserServiceImpl implements IUserService {
 						System.out.println("激活码已过期！");
 					}
 				} else {
-					System.out.println("邮箱已激活，请登录！");
-					return true;
 				}
-			} else {
-				System.out.println("该邮箱未注册（邮箱地址不存在）！");
-			}
+			});
 		} catch (ServiceException e) {
 			e.printStackTrace();
 			System.out.println("ServiceException : " + e);
