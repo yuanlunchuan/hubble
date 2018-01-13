@@ -1,5 +1,5 @@
 ﻿  <div class="row">
-    <div class="col-md-8 col-md-offset-2 request-form">
+    <div class="col-md-12 request-form">
 	<div class="panel panel-default">
 	  <div class="panel-heading">请求参数录入</div>
 	  <div class="panel-body">
@@ -35,17 +35,21 @@
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-2">
-		      <button type="button" class="btn btn-default">格式化</button>
-		    </div>
-		    <div class="col-sm-2">
-		      <button type="button" class="btn btn-default">压缩</button>
-		    </div>
-		  </div>
-		  <div class="form-group">
 		    <label class="col-sm-2 control-label">响应数据</label>
 		    <div class="col-sm-10">
-		      <textarea id="response-data" class="form-control" rows="3" name="response"></textarea>
+				<textarea id="resp-data" class="form-control" style="height: 350px; width: 100%;" name="response">
+				</textarea>
+				<p>Custom controls:<br />
+					<button type='button' id="get-value">get value</button>
+					<button type='button' id="set-value">set value</button>
+					<button type='button' onclick='test_getSelectionRange("resp-data");'>getSelectionRange</button>
+					<button type='button' onclick='test_setSelectionRange("resp-data");'>setSelectionRange</button>
+					<button type='button' onclick='test_getSelectedText("resp-data");'>getSelectedText</button>
+					<button type='button' onclick='test_setSelectedText("resp-data");'>setSelectedText</button>
+					<button type='button' onclick='editAreaLoader.insertTags("resp-data", "[OPEN]", "[CLOSE]");'>insertTags</button>
+					<button type='button' onclick='toogle_editable("resp-data");'>Toggle readonly mode</button>
+					<button type="button" id="format-button">格式化json</button>
+				</p>
 		    </div>
 		  </div>
 		  <div class="form-group">
@@ -58,35 +62,5 @@
 	</div>
     </div>
   </div>
-  
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-				<h4 class="modal-title" id="myModalLabel">
-					响应数据
-				</h4>
-			</div>
-			<div class="modal-body">
-	          <form class="form-horizontal">
-				  <div class="form-group">
-				    <label class="col-sm-2 control-label">响应数据</label>
-				    <div class="col-sm-10">
-				      <textarea id="response-data" class="form-control" rows="20" name="response"></textarea>
-				    </div>
-				  </div>
-	          </form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-				<button type="button" class="btn btn-primary">
-					确认
-				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
+
+
