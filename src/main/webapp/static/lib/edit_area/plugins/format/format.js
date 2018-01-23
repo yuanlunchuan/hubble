@@ -89,7 +89,10 @@ var EditArea_format= {
 		// Handle commands
 		switch(cmd){
 		    case "compression_but":
-			    alert("压缩");
+				var jsonText=parent.editAreaLoader.getValue("resp-data");
+				if(jsonText){
+					parent.editAreaLoader.setValue("resp-data", jsonText.replace(/\ +/g,"").replace(/[\r\n]/g,""));
+				}
 			    return false;
 		    case "format_but":
 				var jsonText=parent.editAreaLoader.getValue("resp-data");
@@ -98,7 +101,6 @@ var EditArea_format= {
 		    	return false;
 		    case "indent":
 				var val= document.getElementById("indent").value;
-				console.info("---------val: "+val);
 				if(val=='tab'){
 					val='\t';
 				}

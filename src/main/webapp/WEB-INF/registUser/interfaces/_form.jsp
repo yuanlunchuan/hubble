@@ -39,17 +39,6 @@
 		    <div class="col-sm-10">
 				<textarea id="resp-data" class="form-control" style="height: 350px; width: 100%;" name="response">
 				</textarea>
-				<p>Custom controls:<br />
-					<button type='button' id="get-value">get value</button>
-					<button type='button' id="set-value">set value</button>
-					<button type='button' onclick='test_getSelectionRange("resp-data");'>getSelectionRange</button>
-					<button type='button' onclick='test_setSelectionRange("resp-data");'>setSelectionRange</button>
-					<button type='button' onclick='test_getSelectedText("resp-data");'>getSelectedText</button>
-					<button type='button' onclick='test_setSelectedText("resp-data");'>setSelectedText</button>
-					<button type='button' onclick='editAreaLoader.insertTags("resp-data", "[OPEN]", "[CLOSE]");'>insertTags</button>
-					<button type='button' onclick='toogle_editable("resp-data");'>Toggle readonly mode</button>
-					<button type="button" id="format-button">格式化json</button>
-				</p>
 		    </div>
 		  </div>
 		  <div class="form-group">

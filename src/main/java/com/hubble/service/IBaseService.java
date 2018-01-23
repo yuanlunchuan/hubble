@@ -2,6 +2,9 @@ package com.hubble.service;
 
 import java.util.List;
 
+import com.hubble.util.Enquiry;
+import com.hubble.util.PageHelper;
+
 public interface IBaseService<T> {
 	T save(T t);
 
@@ -22,4 +25,6 @@ public interface IBaseService<T> {
 	List<T> get(List<String> ids);
 
 	List<T> getAll();
+	
+	PageHelper<T> findByEnquiry(Enquiry enquiry);
 }

@@ -1,5 +1,7 @@
 package com.hubble.controller.registUser;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 
@@ -17,6 +19,7 @@ import com.hubble.entiy.Project;
 import com.hubble.entiy.User;
 import com.hubble.entiy.UserProject;
 import com.hubble.service.IProjectService;
+import com.hubble.service.IRegisterAPIService;
 import com.hubble.service.IUserProjectService;
 import com.hubble.service.IUserService;
 import com.hubble.util.Enquiry;
@@ -31,6 +34,8 @@ public class ProjectController {
 	private IUserService userService;
 	@Autowired
 	private IUserProjectService userProjectService;
+	@Autowired
+	private IRegisterAPIService registerAPIService;
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String create(Project project) {
@@ -49,9 +54,21 @@ public class ProjectController {
 		return "registUser/projects/index";
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public String show(@PathVariable("id") String id, ModelMap modelMap) {
-		modelMap.addAttribute("projectId", id);
+	@RequestMapping(value = "/{projectId}", method = RequestMethod.GET)
+	public String show(@PathVariable("projectId") String projectId, ModelMap modelMap,
+			@RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
+			@RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
+		modelMap.addAttribute("projectId", projectId);
+		
+		Enquiry enquiry = new Enquiry();
+		enquiry.setPageNumber(pageNumber);
+		enquiry.setPageSize(pageSize);
+		Map<String, Object> queryParam = new HashMap<>();
+		queryParam.put("projectId", projectId);
+		
+		modelMap.addAttribute("users", userService.findByEnquiry(enquiry));
+		modelMap.addAttribute("interfaces", registerAPIService.findByEnquiry(enquiry));
+
 		return "registUser/projects/show";
 	}
 

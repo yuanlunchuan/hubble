@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "i_users")
+@Table(name = "users")
 public class User implements Serializable {
 	private static final long serialVersionUID = -8869037297365896519L;
 	@Id
@@ -30,6 +30,9 @@ public class User implements Serializable {
 	@NotEmpty(message = "邮箱不能为空")
 	@Email
 	private String email;
+	
+	@Column(name = "name")
+	private String name;
 
 	@Column(name = "password")
 	@NotEmpty(message = "密码不能为空")

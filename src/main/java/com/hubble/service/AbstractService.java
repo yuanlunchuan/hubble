@@ -6,6 +6,8 @@ import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hubble.dao.BaseDao;
+import com.hubble.util.Enquiry;
+import com.hubble.util.PageHelper;
 
 public class AbstractService<T> implements IBaseService<T> {
 	@Autowired
@@ -63,6 +65,11 @@ public class AbstractService<T> implements IBaseService<T> {
 	@Override
 	public List<T> save(List<T> list) {
 		return baseDao.save(list);
+	}
+
+	@Override
+	public PageHelper<T> findByEnquiry(Enquiry enquiry) {
+		return null;
 	}
 
 }
